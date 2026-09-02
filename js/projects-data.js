@@ -1,11 +1,6 @@
 /**
  * Portfolio Projects Data & Dynamic Renderer Module
  * Contains all 9 project definitions (Overview, Media & STAR Detail Breakdown)
- * 
- * [Media Field usage]:
- *  - Image / GIF: media: '<img src="path/to/image.jpg" alt="Demo Image">'
- *  - Video: media: '<video controls src="path/to/video.mp4"></video>'
- *  - YouTube Embed: media: '<iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>'
  */
 
 const PROJECTS_DATA = [
@@ -16,7 +11,7 @@ const PROJECTS_DATA = [
     title: "[01] VR Robot Teleoperation",
     goal: "VR 환경에서 가상 로봇과 실제 로봇을 원격 제어",
     tags: ["VR", "Unity", "Robotics", "C#", "Teleoperation"],
-    media: '<img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1000&q=80" alt="VR Robot Teleoperation Demo">',
+    media: '<video controls autoplay loop muted src="images/caster_wheel.mp4"></video>',
     star: {
       situation: "VR 모션 트래킹 모듈과 가상/실제 물리 로봇 디바이스 간의 저지연 원격 동기화 제어 환경이 필요했습니다.",
       task: "Unity 기반 VR 인터페이스 설계 및 모션 데이터 IK(역운동학) 연동 모듈을 구축하여 원격 제어를 실현하는 것을 목표로 했습니다.",
@@ -31,7 +26,7 @@ const PROJECTS_DATA = [
     title: "[02] Unity Autonomous Driving Simulation",
     goal: "Unity 기반 자율주행 차량의 AI 학습 및 시뮬레이션",
     tags: ["Unity", "AI", "Simulation", "C#", "ML-Agents"],
-    media: '<img src="https://images.unsplash.com/photo-1558441719-23451ead6601?auto=format&fit=crop&w=1000&q=80" alt="Unity Autonomous Driving Simulation Demo">',
+    media: '<img src="images/image7.gif" alt="ML-Agents Autonomous Driving Demo">',
     star: {
       situation: "실제 차량 테스트 전 위험 요소가 배제된 가상 3D 환경에서 강화학습 주행 정책을 사전 검증하고자 했습니다.",
       task: "Ackermann 주행 운동학 모델과 ML-Agents 프레임워크를 융합하여 자율주행 학습 환경을 구축했습니다.",
@@ -46,7 +41,7 @@ const PROJECTS_DATA = [
     title: "[03] AI Smart Vending System",
     goal: "다중 카메라와 Grid Matching 기반 상품 위치 추정",
     tags: ["AI", "Computer Vision", "Python", "Multi-Camera", "Grid Matching"],
-    media: '<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80" alt="AI Vision Grid Detection Demo">',
+    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/제목 없는 디자인 (1).mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/제목 없는 디자인.mp4" style="width:100%; border-radius: 8px;"></video></div>',
     star: {
       situation: "스마트 자판기 내부에서 차폐되거나 중첩된 다양한 규격의 상품 객체를 정확하게 추정해야 했습니다.",
       task: "다중 시점 비전 스트림 매칭 및 Spatial Grid 좌표 매핑 파이프라인 알고리즘을 개발했습니다.",
@@ -61,6 +56,7 @@ const PROJECTS_DATA = [
     title: "[04] Autonomous Driving AI S/W",
     goal: "AI 기반 자율주행 시스템 개발 및 모빌리티 경진대회 참가",
     tags: ["ROS 2", "C++", "AI", "Perception", "Planning"],
+    media: '<div style="display: flex; gap: 0.75rem; width: 100%;"><img src="images/screenshot_00018.png" style="width: 50%; border-radius: 8px; object-fit: cover;" alt="자율주행 주행 테스트"><img src="images/screenshot_00020.png" style="width: 50%; border-radius: 8px; object-fit: cover;" alt="자율주행 인지 카메라 스트림"></div>',
     star: {
       situation: "대학생 자율주행 경진대회의 복잡한 트랙 미션(장애물 회피, 신호 감지)을 실시간으로 해결해야 했습니다.",
       task: "ROS 2 노드 기반 인지-판단-제어 소프트웨어 아키텍처 구축 및 모듈 간 통신 최적화를 진행했습니다.",
@@ -75,6 +71,7 @@ const PROJECTS_DATA = [
     title: "[05] LiDAR Obstacle Avoidance",
     goal: "LiDAR 장애물 인식 및 회피 경로 생성",
     tags: ["LiDAR", "Perception", "Planning", "C++"],
+    media: '<img src="images/pcd_with_rbg.jpg" alt="LiDAR RGB Point Cloud Fusion">',
     star: {
       situation: "3D LiDAR 데이터의 둔탁한 노면 포인트를 정밀하게 필터링하고 돌발 동적 장애물을 우회할 필요가 있었습니다.",
       task: "PCL 지면 제거, Euclidean Clustering 및 가우시안 궤도 오프셋 회피 주행 경로 알고리즘을 개발했습니다.",
@@ -89,6 +86,7 @@ const PROJECTS_DATA = [
     title: "[06] Monocular Camera TTC",
     goal: "단일 카메라 기반 객체 추정 및 TTC 인지",
     tags: ["Computer Vision", "Python", "Mono Camera", "TTC"],
+    media: '<video controls autoplay loop muted src="images/media2.mp4"></video>',
     star: {
       situation: "고가의 3D 센서 없이 단일 모노 카메라 스트림만으로 전방 충돌 예상 시간(TTC)을 정밀 계산해야 했습니다.",
       task: "2D 비전 디텍션 바운딩 박스의 프레임 간 스케일 변화율 추정 기반 비상 제어 예측 알고리즘 구축을 목표로 했습니다.",
