@@ -11,29 +11,49 @@ const PROJECTS_DATA = [
     title: "[01] VR Robot Teleoperation",
     goal: "VR 환경에서 가상 로봇과 실제 로봇을 원격 제어",
     tags: ["VR", "Unity", "Robotics", "C#", "Teleoperation"],
-    media: '<div class="media-card-item"><video controls autoplay loop muted src="images/caster_wheel.mp4"></video><div class="media-caption"><i class="fa-solid fa-play"></i> VR 로봇 원격 제어 시뮬레이션 데모</div></div>',
     star: {
-      situation: "VR 모션 트래킹 모듈과 가상/실제 물리 로봇 디바이스 간의 저지연 원격 동기화 제어 환경이 필요했습니다.",
-      task: "Unity 기반 VR 인터페이스 설계 및 모션 데이터 IK(역운동학) 연동 모듈을 구축하여 원격 제어를 실현하는 것을 목표로 했습니다.",
-      action: "C# 모션 맵핑 파이프라인 개발, HMD 핸드 트래킹 좌표 변환 튜닝 및 Smooth Interpolation 필터를 적용했습니다.",
-      result: "원격 제어 통신 지연시간 30ms 이내 유지 및 고정밀 픽앤플레이스 작업 시동을 성공적으로 구현했습니다."
+      situation: "VR 환경에서 사용자의 움직임을 로봇의 동작으로 연결하고, 가상 로봇과 실제 로봇을 동일한 방식으로 제어할 수 있는 시스템이 필요했습니다.",
+      task: "Unity 기반 VR 인터페이스를 구축하고 VR 입력과 로봇 동작 사이의 좌표 변환 및 제어 방식을 구현했습니다.",
+      action: "C#으로 VR 입력 데이터를 처리하고 로봇 좌표계와 VR 사용자 시점 사이의 좌표 변환을 구현했습니다. 테스트 과정에서 로봇 기준의 방향과 사용자가 바라보는 방향이 다르게 인식되는 문제를 발견하고, 사용자 시점을 기준으로 입력을 해석하도록 제어 방식을 개선했습니다.",
+      result: "VR 환경에서 가상 로봇과 실제 로봇을 동일한 입력 방식으로 제어할 수 있는 원격조종 시스템을 구현했습니다."
     }
   },
+
   {
     id: "modal-project-2",
     category: "simulation",
-    categoryLabel: "Simulation & VR",
+    categoryLabel: "Simulation & AI",
     title: "[02] Unity Autonomous Driving Simulation",
     goal: "Unity 기반 자율주행 차량의 AI 학습 및 시뮬레이션",
     tags: ["Unity", "AI", "Simulation", "C#", "ML-Agents"],
-    media: '<div class="media-card-item"><img src="images/ml_agent.gif" alt="ML-Agents Autonomous Driving Demo"><div class="media-caption"><i class="fa-solid fa-film"></i> ML-Agents 자율주행 강화학습 3D 서킷 데모</div></div>',
+    media: `
+      <div class="media-grid">
+        <div class="media-card-item">
+          <video controls autoplay loop muted src="images/unity.webm"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> Unity 자율주행 시뮬레이션 #1</div>
+        </div>
+        <div class="media-card-item">
+          <video controls loop muted src="images/unity_2.webm"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> Unity 자율주행 시뮬레이션 #2</div>
+        </div>
+        <div class="media-card-item">
+          <video controls loop muted src="images/unity_3.webm"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> Unity 자율주행 시뮬레이션 #3</div>
+        </div>
+        <div class="media-card-item">
+          <img src="images/ml_agent.gif" alt="ML-Agents Autonomous Driving Demo">
+          <div class="media-caption"><i class="fa-solid fa-film"></i> ML-Agents 자율주행 강화학습 3D 서킷 데모</div>
+        </div>
+      </div>
+    `,
     star: {
-      situation: "실제 차량 테스트 전 위험 요소가 배제된 가상 3D 환경에서 강화학습 주행 정책을 사전 검증하고자 했습니다.",
-      task: "Ackermann 주행 운동학 모델과 ML-Agents 프레임워크를 융합하여 자율주행 학습 환경을 구축했습니다.",
-      action: "Unity PhysX 튜닝, C# 멀티 레이캐스트 가상 센서 모듈 구현 및 연속적 조향/가속도 보상 함수를 설계했습니다.",
-      result: "복잡한 곡선 서킷 주행 성공률 98% 달성 및 60FPS 실시간 시뮬레이션 환경을 구축했습니다."
+      situation: "실제 차량에서 반복적으로 테스트하기 어려운 자율주행 학습을 가상 환경에서 수행하기 위해 Unity 기반 시뮬레이션 환경을 구축했습니다.",
+      task: "차량의 움직임을 물리적으로 구현하고 ML-Agents를 이용해 차량이 주행 경로를 따라 학습할 수 있는 환경을 구성했습니다.",
+      action: "Unity와 C#을 이용해 차량 물리와 주행 환경을 구성하고, ML-Agents의 연속 행동 공간을 활용해 조향과 속도를 제어하도록 학습 환경을 설계했습니다. 차량 상태와 주행 경로 정보를 관측값으로 구성하고 주행 상황에 맞는 보상 구조를 설계했습니다.",
+      result: "Unity에서 자율주행 차량의 주행 환경과 학습 파이프라인을 구축하고, 시뮬레이션 환경에서 AI 기반 주행 학습을 수행했습니다."
     }
   },
+
   {
     id: "modal-project-3",
     category: "vision",
@@ -45,7 +65,7 @@ const PROJECTS_DATA = [
       <div class="media-grid">
         <div class="media-card-item">
           <video controls autoplay loop muted src="images/무인판매대.mp4"></video>
-          <div class="media-caption"><i class="fa-solid fa-video"></i> 무인판매대 실시간 비전 디텍션</div>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 무인판매대 비전 인식</div>
         </div>
         <div class="media-card-item">
           <video controls loop muted src="images/무인판매대_2.mp4"></video>
@@ -58,12 +78,13 @@ const PROJECTS_DATA = [
       </div>
     `,
     star: {
-      situation: "스마트 자판기 내부에서 차폐되거나 중첩된 다양한 규격의 상품 객체를 정확하게 추정해야 했습니다.",
-      task: "다중 시점 비전 스트림 매칭 및 Spatial Grid 좌표 매핑 파이프라인 알고리즘을 개발했습니다.",
-      action: "Python OpenCV/PyTorch 딥러닝 디텍션 연동, 카메라 캘리브레이션 및 격자 매칭 알고리즘을 구현했습니다.",
-      result: "상품 인식 및 Grid 위치 추정 정확도 95% 이상을 달성하여 무인 자동화 시스템을 완성했습니다."
+      situation: "무인판매대 내부의 상품을 여러 카메라에서 인식하고, 서로 다른 시점에서 관측된 상품을 하나의 공간 정보로 통합할 필요가 있었습니다.",
+      task: "다중 카메라의 객체 인식 결과를 비교하고 상품의 실제 위치를 Grid 단위로 추정하는 시스템을 구현했습니다.",
+      action: "Python 기반으로 객체 인식 결과를 처리하고, 카메라별 위치 정보를 활용해 동일 상품을 매칭했습니다. 이후 Grid Matching을 적용해 상품의 위치를 공통된 격자 좌표로 변환했습니다.",
+      result: "다중 카메라의 객체 인식 결과를 하나의 Grid 공간으로 통합하여 상품의 위치를 추정하는 파이프라인을 구현했습니다."
     }
   },
+
   {
     id: "modal-project-4",
     category: "autonomous",
@@ -75,43 +96,57 @@ const PROJECTS_DATA = [
       <div class="media-grid">
         <div class="media-card-item">
           <video controls autoplay loop muted src="images/semantic_detection.mp4"></video>
-          <div class="media-caption"><i class="fa-solid fa-video"></i> Semantic Segmentation 인지 스트림</div>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 자율주행 인지 시스템</div>
         </div>
         <div class="media-card-item">
           <video controls loop muted src="images/traffic_light.mp4"></video>
-          <div class="media-caption"><i class="fa-solid fa-video"></i> 신호등 인지 및 정지선 제어</div>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 신호등 인지 및 주행 제어</div>
         </div>
         <div class="media-card-item">
           <img src="images/mapping.png" alt="자율주행 주행 테스트">
-          <div class="media-caption"><i class="fa-solid fa-image"></i> 실차 주행 트랙 매핑</div>
+          <div class="media-caption"><i class="fa-solid fa-image"></i> 주행 트랙 매핑</div>
         </div>
         <div class="media-card-item">
-          <img src="images/slam.png" alt="자율주행 인지 카메라 스트림">
-          <div class="media-caption"><i class="fa-solid fa-image"></i> SLAM 3D 지도 데이터 구축</div>
+          <img src="images/slam.png" alt="자율주행 SLAM">
+          <div class="media-caption"><i class="fa-solid fa-image"></i> SLAM 기반 지도 구축</div>
         </div>
       </div>
     `,
     star: {
-      situation: "대학생 자율주행 경진대회의 복잡한 트랙 미션(장애물 회피, 신호 감지)을 실시간으로 해결해야 했습니다.",
-      task: "ROS 2 노드 기반 인지-판단-제어 소프트웨어 아키텍처 구축 및 모듈 간 통신 최적화를 진행했습니다.",
-      action: "C++ 기반 Behavior Tree 상태 추론기 개발, Pure Pursuit 경로 추종 및 센서 융합 노드를 통합했습니다.",
-      result: "경진대회 미션 수행 및 실차/시뮬레이션 트랙 주행 검증을 완수했습니다."
+      situation: "대학생 자율주행 경진대회에 참가하며 차량이 주행 중 주변 환경을 인식하고 상황에 맞게 주행할 수 있는 소프트웨어가 필요했습니다.",
+      task: "ROS 2를 기반으로 센서 데이터를 처리하고 인지·판단·제어 모듈을 연결하는 자율주행 소프트웨어를 개발했습니다.",
+      action: "ROS 2 기반 노드를 구성하고 C++ 및 Python으로 LiDAR와 카메라 데이터를 처리했습니다. 차선, 신호등, 장애물 등의 인지 결과를 활용해 주행 판단 및 경로 계획으로 연결하고, 각 모듈을 실제 주행 환경에서 통합했습니다.",
+      result: "인지·판단·제어로 이어지는 자율주행 소프트웨어 파이프라인을 구성하고 실차 및 시뮬레이션 환경에서 주행을 검증했습니다."
     }
   },
+
   {
     id: "modal-project-5",
-    category: "vision",
-    categoryLabel: "AI & Computer Vision",
-    title: "[05] Monocular Camera TTC",
-    goal: "단일 카메라 기반 객체 추정 및 TTC 인지",
-    tags: ["Computer Vision", "Python", "Mono Camera", "TTC"],
+    category: "simulation",
+    categoryLabel: "Game Development",
+    title: "[05] Unity 2D Pixel Adventure (WIP)",
+    goal: "Unity 기반 2D 도트 액션 게임의 캐릭터 이동 및 게임플레이 시스템 구현",
+    tags: ["Unity", "2D Game", "C#", "Pixel Art", "WIP"],
+    media: `
+      <div class="media-grid">
+        <div class="media-card-item">
+          <video controls autoplay loop muted src="images/2d_dot_2.webm"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 2D 도트 게임 플레이 시연 #1</div>
+        </div>
+        <div class="media-card-item">
+          <video controls loop muted src="images/2d_dot.webm"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 2D 도트 게임 플레이 시연 #2</div>
+        </div>
+      </div>
+    `,
     star: {
-      situation: "고가의 3D 센서 없이 단일 모노 카메라 스트림만으로 전방 충돌 예상 시간(TTC)을 정밀 계산해야 했습니다.",
-      task: "2D 비전 디텍션 바운딩 박스의 프레임 간 스케일 변화율 추정 기반 비상 제어 예측 알고리즘 구축을 목표로 했습니다.",
-      action: "Python OpenCV 노드 작성, 객체 팽창 스케일 팩터 역산 및 릴리스 타임 튜닝을 진행했습니다.",
-      result: "충돌 2.5초 전 비상 제어 트리거 정확도 확보 및 모노 비전 기반 실시간 TTC 인지에 성공했습니다."
+      situation: "2D 게임에서 캐릭터가 플레이어의 입력에 따라 이동하고, 장애물과 충돌하지 않으면서 자연스럽게 이동할 수 있는 시스템을 구현하고자 했습니다.",
+      task: "맵의 구조를 기반으로 캐릭터의 이동 경로를 계산하고, 이동 상태에 따라 캐릭터 애니메이션이 자연스럽게 전환되는 시스템을 구축했습니다.",
+      action: "Unity와 C#을 활용해 2D 맵의 이동 가능 영역을 구성하고 A* 알고리즘을 활용한 경로 탐색을 구현했습니다. 장애물이나 이동 불가능한 영역을 고려해 캐릭터의 이동 경로를 계산하고, 이동 방향과 상태에 따라 걷기·대기 등의 애니메이션이 전환되도록 연결했습니다. 또한 Collider와 Rigidbody를 활용해 캐릭터와 환경 사이의 충돌을 처리했습니다.",
+      result: "장애물을 고려해 이동 경로를 계산하고 캐릭터의 이동 및 애니메이션을 연동하는 기본적인 2D 게임플레이 시스템을 구현했습니다. 현재 이를 기반으로 레벨과 게임 요소를 확장하고 있습니다."
     }
   },
+
   {
     id: "modal-project-6",
     category: "others",
@@ -119,27 +154,35 @@ const PROJECTS_DATA = [
     title: "[06] Campus Meal Mate",
     goal: "숭실대학교 학생 식사 매칭 웹 서비스",
     tags: ["Web", "JavaScript", "Database", "Team Project"],
+    media: `
+      <div class="media-card-item">
+        <img src="images/mealmatching_flow_recording.webp" alt="Campus Meal Mate Demo">
+        <div class="media-caption"><i class="fa-solid fa-film"></i> 식사 매칭 및 신청 플로우</div>
+      </div>
+    `,
     star: {
-      situation: "교내 학생 간 소통 활성화 및 식사 그룹 구성을 돕는 직관적인 소셜 커뮤니티 플랫폼이 필요했습니다.",
-      task: "팀 프로젝트로서 실시간 매칭 인터페이스 및 모바일 데이터베이스 백엔드 서비스를 구축했습니다.",
-      action: "JavaScript UI 반응형 프론트엔드 개발, 사용자 그룹 매칭 데이터 구조 설계 및 모바일 사용성을 개선했습니다.",
-      result: "반응형 교내 서비스 배포 완성 및 성공적인 동아리/팀 협업 성과를 거두었습니다."
+      situation: "학교 내에서 함께 식사할 사람을 찾고 약속을 정하는 과정을 간편하게 만들기 위한 학생 대상 웹 서비스를 기획했습니다.",
+      task: "팀 프로젝트로 식사 정보를 등록하고 원하는 조건의 사용자를 확인할 수 있는 웹 서비스를 구현했습니다.",
+      action: "JavaScript를 활용해 웹 인터페이스를 구현하고 사용자 및 식사 매칭 정보를 관리할 수 있도록 데이터 구조를 구성했습니다. 팀원들과 기능을 분담하고 각 기능을 연동했습니다.",
+      result: "학생들이 식사 정보를 등록하고 서로 매칭할 수 있는 웹 서비스의 주요 기능을 구현했습니다."
     }
   },
+
   {
     id: "modal-project-7",
     category: "others",
     categoryLabel: "Activities & Volunteer",
     title: "[07] Robotex & MRC Global Olympiad",
-    goal: "2026 Robotex & MRC Global Olympiad Korea International 대회 보조심판",
+    goal: "2026 Robotex & MRC Global Olympiad Korea 대회 보조심판",
     tags: ["Robotics", "Competition", "Volunteer"],
     star: {
-      situation: "세계적인 국제 로봇 올림피아드 한국 대회에서 경기 규정준수 여부 및 신뢰도 높은 판정이 필요했습니다.",
-      task: "보조심판 임무를 통해 참가 로봇들의 제어 규정 점검 및 경기 운영을 지원했습니다.",
-      action: "자율주행/로봇 제어 경기장 환경 점검, 계측 심사 지원 및 공정한 주행 검정 운영에 기여했습니다.",
-      result: "국제 대회 공식 심방 지원 완수 및 글로벌 로보틱스 커뮤니티 네트워킹을 경험했습니다."
+      situation: "로봇 경기가 진행되는 현장에서 참가자와 로봇의 경기 상황을 확인하고 원활한 대회 운영을 지원할 인력이 필요했습니다.",
+      task: "대회 보조심판으로 참가자들의 경기 진행을 지원하고 경기 운영을 보조했습니다.",
+      action: "경기 진행 상황을 확인하고 경기장 운영 및 심판 업무를 보조했습니다. 참가 로봇의 주행 상황을 직접 관찰하며 실제 로봇 경기가 운영되는 과정을 경험했습니다.",
+      result: "국제 로봇 대회의 보조심판으로 참여하며 실제 로봇 경기 운영과 현장 대응 과정을 경험했습니다."
     }
   },
+
   {
     id: "modal-project-8",
     category: "autonomous",
@@ -147,12 +190,44 @@ const PROJECTS_DATA = [
     title: "[08] RISE Capstone Design",
     goal: "단일 Mono Camera 기반 객체 추정 및 TTC 인지",
     tags: ["AI", "Computer Vision", "Mono Camera", "TTC", "Autonomous Driving"],
-    media: '<div class="media-card-item"><img src="images/pcd_with_rbg.jpg" alt="LiDAR RGB Point Cloud Fusion"><div class="media-caption"><i class="fa-solid fa-cube"></i> LiDAR Point Cloud & RGB Color Fusion 시각화</div></div>',
+    media: `
+      <div class="media-card-item">
+        <img src="images/capstone.png" alt="RISE Capstone Design">
+        <div class="media-caption"><i class="fa-solid fa-image"></i> RISE 캡스톤 디자인 인지 시스템</div>
+      </div>
+    `,
     star: {
-      situation: "RISE 사업단 캡스톤 디자인의 연구 주제로 차세대 임베디드 저전력 자율주행 안전 시스템을 개발하고자 했습니다.",
-      task: "단일 모노 비전 센서 기반 실시간 충돌 위험 인지 및 차량 제어 연동 통합 파이프라인 개발을 추진했습니다.",
-      action: "Deep Learning 딥 비전 추론 모델 최적화, 스케일 추정알고리즘 구현 및 실기기 시스템 튜닝을 수행했습니다.",
-      result: "캡스톤 프로젝트 우수 평가 획득 및 30FPS 실시간 인지 시스템 완성을 달성했습니다."
+      situation: "저비용 센서인 단일 카메라를 활용해 주행 중 전방 객체의 접근 상황을 판단할 수 있는 안전 인지 시스템을 개발하고자 했습니다.",
+      task: "단일 카메라에서 얻은 객체 정보를 바탕으로 Time To Collision(TTC)을 계산하고 충돌 위험을 판단하는 파이프라인을 구현했습니다.",
+      action: "카메라 영상에서 객체의 위치와 크기 변화를 추적하고, 프레임 간 변화를 이용해 TTC를 계산하는 알고리즘을 구현했습니다. 다양한 주행 상황에서 결과를 확인하며 파라미터를 조정했습니다.",
+      result: "단일 카메라 기반 객체 정보와 TTC를 활용해 전방 충돌 위험을 추정하는 인지 파이프라인을 구현했습니다."
+    }
+  },
+
+  {
+    id: "modal-project-9",
+    category: "autonomous",
+    categoryLabel: "Autonomous Driving",
+    title: "[09] 국민대학교 자율주행 경진대회",
+    goal: "국민대학교 자율주행 경진대회 실차 미션 수행 및 자율주행 소프트웨어 개발",
+    tags: ["Autonomous Driving", "ROS 2", "C++", "Perception", "Competition"],
+    media: `
+      <div class="media-grid">
+        <div class="media-card-item">
+          <video controls autoplay loop muted src="images/koo2.webm"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 국민대 자율주행 트랙 주행 시연</div>
+        </div>
+        <div class="media-card-item">
+          <video controls loop muted src="images/ufld_1.webm"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 차선 및 객체 인지 파이프라인</div>
+        </div>
+      </div>
+    `,
+    star: {
+      situation: "국민대학교 자율주행 경진대회의 실차 트랙에서 차선 유지, 신호 인지, 장애물 대응 등의 주행 미션을 수행해야 했습니다.",
+      task: "실차 플랫폼에서 카메라와 LiDAR 센서 데이터를 처리하고, 인지 결과를 주행 판단 및 제어로 연결하는 소프트웨어를 개발했습니다.",
+      action: "ROS 2 기반으로 카메라와 LiDAR 데이터를 처리하고 차선 및 객체 인지 파이프라인을 구성했습니다. 인지 결과를 주행 판단에 활용하고 경로 추종 제어를 연동하여 실제 차량에서 반복적으로 테스트하고 파라미터를 조정했습니다.",
+      result: "실차 자율주행 플랫폼에서 인지부터 주행 제어까지의 소프트웨어를 통합하고 경진대회 트랙 주행을 검증했습니다."
     }
   }
 ];
