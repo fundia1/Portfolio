@@ -1,37 +1,21 @@
-# 🤖 Portfolio: 로보틱스 & 자율 시스템 소프트웨어 엔지니어 (Robotics & Autonomous Systems Software Engineer)
+# 🎮 🤖 Portfolio: 주진주 (Jinju Ju)
+> **게임 프로그래밍 · 자율주행/로보틱스 · Unity / AI**  
+> *"기계공학과 컴퓨터공학 기반으로 로봇, 자율주행, AI 및 게임 프로그래밍을 개발하고 있습니다."*
 
-> **"기계공학의 물리/동역학 제어 지식과 컴퓨터공학의 고성능 ROS 2/C++ 비동기 시스템 아키텍처를 유기적으로 융합하여, 모바일 로봇, 센서 융합 위치 추정, 가상-실차(Sim-to-Real) 제어기 및 강인한 의사결정 트리를 구축합니다."**
-
----
-
-## 🌐 Web Portfolio (인터랙티브 웹 포트폴리오 사이트)
-
-본 포트폴리오는 **인터랙티브 웹 사이트 (`index.html`)** 형태의 포트폴리오를 제공합니다.  
-웹 사이트에서는 **아커만 조향 kinematic 제어 시뮬레이션**, **2자유도(2-DOF) 로봇팔 IK & Pick-and-Place**, **Perception & Planning 파이프라인 시뮬레이터**를 직접 조작해 보실 수 있습니다.
-
-### 🚀 웹 포트폴리오 실행 방법 (Web Site Launch)
-```bash
-# 1. 포트폴리오 디렉토리로 이동
-cd /home/jinju/Portfolio
-
-# 2. 로컬 웹 서버 실행 (Python 3)
-python3 -m http.server 8080
-
-# 3. 브라우저 접속: http://localhost:8080
-```
-*(또는 `index.html` 파일을 직접 웹 브라우저에서 열 수 있습니다.)*
+🌐 **Live Web Portfolio**: [https://fundia1.github.io/Portfolio/](https://fundia1.github.io/Portfolio/)
 
 ---
 
 ## 📌 Executive Summary
 
-- **학력/소속**: 숭실대학교 기계공학부 (주전공) & 컴퓨터학부 (복수전공) / 자율주행 & 로보틱스 학술 동아리 '제어학회' (전 부회장 · Planning 파트 팀장 / 현 Localization 파트 팀장)
-- **목표 직무**: 로보틱스 & 자율 시스템 소프트웨어 엔지니어 (Robotics, Localization & Mapping, Control, Decision & Behavior Systems)
-- **핵심 강점**:
-  - **ME & CS Dual-Domain Synergy**: 기계공학(동역학, 기구학, 제어공학)의 물리적 해석력과 컴퓨터공학(자료구조, 알고리즘, ROS 2, 멀티스레딩)의 아키텍처 구축력 융합
-  - **Sim-to-Real Verification**: Unity ML-Agents 및 Gazebo 가상 환경에서 검증한 동역학 모델 제어기를 실제 실외 모바일 플랫폼에 이식/실증
-  - **Multi-Sensor Fusion & Kinematic Correction**: GPS, IMU, Encoder 융합 Dual-EKF (`robot_localization`) 파이프라인 및 비대칭 구동계 기구학 보정 수식 개발
-  - **Modular Software Architecture**: Groot2 / BehaviorTree.CPP 기반의 서브시퀀스 유연 의사결정 트리 설계 및 스레드 세이프 Blackboard 연동
+- **이름**: 주진주 (Jinju Ju)
+- **이메일 / 연락처**: `wnwlswn23@naver.com` / `010-2212-7505`
+- **학력**: 숭실대학교 기계공학과 (주전공) · 컴퓨터학부 (복수전공)
+- **주요 역량**:
+  - **ME & CS Dual-Domain Synergy**: 기계공학(동역학, 기구학, 제어공학)의 물리적 해석력과 컴퓨터공학(자료구조, 알고리즘, ROS 2, 멀티스레딩)의 개발 역량 융합
+  - **Simulation & Game Engine**: Unity (C#) 기반 2D/3D 게임 플레이 물리, ML-Agents 자율주행 강화학습 환경 구축 및 VR 원격조종 제어 시스템 개발
+  - **Autonomous Perception & Control**: ROS 2 (C++/Python) 기반 다중 센서(LiDAR, Camera) 융합, 차선 및 신호 인지, 경로 계획 및 제어 파이프라인 개발
+  - **AI & Computer Vision**: 다중 카메라 비전 및 Grid Matching 기반 3D 공간 상품 위치 추정 알고리즘 개발
 
 ---
 
@@ -39,61 +23,79 @@ python3 -m http.server 8080
 
 | Domain | Technologies & Tools |
 | :--- | :--- |
-| **Framework & OS** | ROS 2, ROS 1, Linux (Ubuntu POSIX), `robot_localization`, BehaviorTree.CPP |
-| **Languages** | Modern C++ (C++14/17), Python 3, C# |
-| **Robotics & Control** | MPC (Model Predictive Control), Dual-EKF State Estimation, Ackermann / Caster Kinematics, IK |
-| **CS Core & Systems** | Data Structures, Multi-Threading, Async I/O, SQLite, Git |
-| **Simulation & Tools** | Gazebo, Unity (ML-Agents), RViz, Groot2 |
+| **Languages** | Modern C++, Python 3, C#, JavaScript, HTML5 / CSS3 |
+| **Frameworks & OS** | ROS 2, Linux (Ubuntu), Unity (2D/3D, ML-Agents), BehaviorTree.CPP |
+| **Robotics & Vision** | LiDAR-Camera Fusion, OpenCV, PyTorch, Multi-Camera Grid Matching, TTC (Time To Collision), EKF |
+| **Tools & Platforms** | Git / GitHub, VS Code, RViz, Unity Editor |
 
 ---
 
-## 🚀 Main Projects (STAR Structure)
+## 🎓 Experience & Timeline (학력 및 연구·대외활동)
 
-### 1. 4륜 모바일 로봇 동역학 모델링 & MPC 제어기 (Robotics & Dynamics)
-> **Goal**: 캐스터 휠 장착 모바일 로봇 동역학 모델링, MPC 제어기 구현, Unity ML-Agents 기반 Sim-to-Real 실외 실차 주행 검증
-
-- **Situation (상황)**: 전륜 구동 및 후륜 자율 캐스터 휠 구조의 4륜 로봇 주행 시 비선형 마찰력과 관성 모멘트로 인해 급선회 시 횡오차가 증가하고 조향 안정성이 저하되는 문제 발생.
-- **Task (과제)**: 로봇 상태 변수(위치, 헤딩, 선속도, 각속도) 기반 Dynamic Model 수식화 및 MPC + PD 보조 제어기 구현. Unity ML-Agents 시뮬레이션 및 실외 실차 검증.
-- **Action (수행 내용 & 공학적 근거)**:
-  - 캐스터 휠 비선형 마찰 관성 모멘트 수학적 모델링 및 Prediction Horizon / Q/R 가중치 행렬 최적화.
-  - Unity 3D ML-Agents 학습 파이프라인 구축 후 실외 실차 하드웨어 플랫폼에 이식하여 실증 완료.
-- **Result (성과)**: 급격한 곡선 주행 시 횡오차(Cross-track Error) 감쇄 및 조향 주행 안정성 증명. Unity 시뮬레이션 및 실외 실차 목적지 도달 검증 완료.
-
----
-
-### 2. 이종 센서 융합 Dual-EKF & 비대칭 기구학 보정 파이프라인 (Sensor Fusion & Localization)
-> **Goal**: GPS/IMU/Encoder 융합 및 비대칭 구동계 기구학 오차 보정을 통한 고정밀 위치 추정(Localization) 파이프라인 구축
-
-- **Situation (상황)**: 실외 자율주행 주행 중 센서 노이즈 및 우측 전륜 1개 엔코더 비대칭 하드웨어 구조로 인해 위치 오차가 누적되고 급선회 시 Odometry 궤적 이탈 발생.
-- **Task (과제)**: Dual-EKF (`robot_localization`) 파이프라인 구축, Ackermann 조향 기구학 보정식 적용, ENU 글로벌 좌표계 정립 및 카메라 TF 오프셋 동기화.
-- **Action (수행 내용 & 공학적 근거)**:
-  - 1차 EKF: IMU(고주파 각속도/가속도) + Encoder 융합 local pose (`odom` frame) 생성.
-  - 2차 EKF: GPS 데이터 통합 ENU 기준 global pose (`map` frame) 정립으로 누적 Drift 제거.
-  - 비대칭 엔코더 구조에 Ackermann 조향 기구학 관계식을 반영하여 차량 중심 선속도 정밀 보정.
-- **Result (성과)**: 단일 GPS 대비 누적 위치 오차(Drift) 획기적 개선, 급선회 시 odometry 이탈 완화, 정밀 TF 트리를 통한 인지-위치 데이터 동기화 확보.
+1. **숭실대학교** `(2023.03 ~ 현재)`
+   - 기계공학과 · 컴퓨터학부 복수전공
+   - C/C++, Python, C# 및 Unity 기반 S/W 개발 / AI, 비전, 로봇 제어 및 시뮬레이션 수행
+2. **대학생 창작 모빌리티 경진대회** `(2023.12 ~ 현재)`
+   - 자율주행 시스템 개발 · 3년 연속 참가
+   - LiDAR 기반 장애물 인식 & 회피 경로 생성, Unity 기반 차량 시뮬레이션 및 AI 학습, 인지·판단·제어 파이프라인 개발
+3. **숭실대학교 지능로봇 연구실** `(2025.08 ~ 2026.05)`
+   - 학부연구생
+   - VR 기반 매니퓰레이터 원격조종 시스템 개발, 이동 로봇 Localization & Planning 실험
+4. **RISE 캡스톤디자인** `(2026.03 ~ 2026.06)`
+   - 자율주행 인지 시스템 개발 (단일 Mono Camera 기반 객체 추정 및 TTC 충돌 위험 인지)
+5. **국민대학교 자율주행 경진대회** `(2026.03 ~ 2026.07)`
+   - 자율주행 소프트웨어 개발 (ROS 2 기반 센서 처리, 차선/객체 인지, 주행 판단 및 트랙 완주 검증)
+6. **무인판매대 상품인식 AI 경진대회** `(2026.05 ~ 2026.07)`
+   - AI 시스템 개발 (다중 카메라 기반 상품 인식 및 Grid Matching 위치 추정)
 
 ---
 
-### 3. C++/Groot2 기반 모듈화 계층형 Behavior Tree 의사결정 아키텍처 (Decision & Software)
-> **Goal**: FSM 상태 전환 복잡도 한계를 극복하고 복합 주행 시나리오 대응을 위한 C++ 모듈화 Behavior Tree 설계
+## 🚀 Projects Highlights
 
-- **Situation (상황)**: 시나리오가 복잡해짐에 따라 기존 Finite State Machine(FSM) 아키텍처의 상태 조건 결합도가 높아져 유지보수 및 예외 처리가 어려워짐.
-- **Task (과제)**: Groot2 및 BehaviorTree.CPP를 활용하여 모듈화된 의사결정 트리 구조를 설계하고 주행 컨텍스트 전환 병목 현상 개선.
-- **Action (수행 내용 & 공학적 근거)**:
-  - 기존 독립 최상위 상태였던 '정지선 대기' 로직을 '주행(Driving)' 상태의 내부 하위 서브시퀀스(Sub-sequence) 노드로 재구조화.
-  - 주행 상태 유지 하에 하위 노드에서 조건(Condition)을 즉시 검사하여 트리 재평가 과부하 방지.
-- **Result (성과)**: 의사결정 노드 간 결합도(Coupling) 최소화, 신규 시나리오 확장성 향상 및 정지선 판단 안정성 유의미 개선.
+### [01] VR Robot Teleoperation
+- **Goal**: VR 환경에서 가상 로봇과 실제 로봇을 원격 제어
+- **Situation & Task**: VR 모션 트래킹과 로봇 간 동기화 제어가 필요하여 Unity 기반 VR 인터페이스 및 좌표 변환 파이프라인을 구현.
+- **Action & Result**: C#으로 HMD 및 컨트롤러 시점 변환을 처리하고 사용자 중심 제어 방식을 개선하여 동일 입력 방식의 원격 조종 시스템 구축.
+
+### [02] Unity Autonomous Driving Simulation
+- **Goal**: Unity 기반 자율주행 차량의 AI 학습 및 시뮬레이션
+- **Situation & Task**: 실차 테스트의 제약을 극복하고자 가상 3D 서킷에서 강화학습 주행 환경 구축.
+- **Action & Result**: Unity/C# 물리 엔진과 ML-Agents 연속 행동 공간 조향/가속도 보상 구조를 설계하여 3D 시뮬레이션 기반 AI 주행 학습 수행.
+
+### [03] AI Smart Vending System
+- **Goal**: 다중 카메라와 Grid Matching 기반 상품 위치 추정
+- **Situation & Task**: 무인판매대 내부 다중 시점 관측 상품을 공통 3D 공간 정보로 통합 필요.
+- **Action & Result**: Python 기반 객체 인식 및 다중 카메라 캘리브레이션/Grid Matching 알고리즘을 적용하여 격자 좌표 상품 위치 추정 파이프라인 구현.
+
+### [04] Autonomous Driving AI S/W
+- **Goal**: AI 기반 자율주행 시스템 개발 및 모빌리티 경진대회 참가
+- **Situation & Task**: 대학생 자율주행 경진대회 참가용 ROS 2 기반 인지·판단·제어 통합 소프트웨어 구축.
+- **Action & Result**: C++/Python 노드 구성, LiDAR/카메라 데이터 처리, 신호등 및 장애물 인지를 경로 계획과 제어로 연결하여 실차 주행 검증.
+
+### [05] Unity 2D Pixel Adventure (WIP)
+- **Goal**: Unity 기반 2D 도트 액션 게임의 캐릭터 이동 및 게임플레이 시스템 구현
+- **Situation & Task**: 2D 게임 내 장애물 회피 이동 및 자연스러운 상태 전환 애니메이션 구축.
+- **Action & Result**: C# 및 Unity 2D Physics/Collider 연동, A* 알고리즘 경로 탐색 및 FSM 행동 상태 연동으로 핵심 게임플레이 메커니즘 구현.
+
+### [06] Campus Meal Mate
+- **Goal**: 숭실대학교 학생 식사 매칭 웹 서비스
+- **Situation & Task**: 교내 학생 식사 약속 및 모임을 돕는 커뮤니티 반응형 웹 서비스 기획.
+- **Action & Result**: JavaScript 기반 웹 UI 및 식사 데이터 매칭 구조를 개발하고 팀 협업을 통해 매칭 플랫폼 구축.
+
+### [07] Robotex & MRC Global Olympiad
+- **Goal**: 2026 Robotex & MRC Global Olympiad Korea 대회 보조심판
+- **Action & Result**: 국제 대회 보조심판으로서 로봇 주행 검정, 규정 점검 및 경기 운영을 지원하고 현장 로보틱스 운영 경험 습득.
+
+### [08] RISE Capstone Design
+- **Goal**: 단일 Mono Camera 기반 객체 추정 및 TTC 인지
+- **Situation & Task**: 저비용 단일 카메라 센서 기반 충돌 위험 예방 안전 인지 파이프라인 개발.
+- **Action & Result**: 프레임 간 객체 크기/위치 변화 추적 알고리즘을 구현하여 실시간 TTC(Time To Collision) 계산 및 전방 충돌 위험 추정 시스템 완성.
+
+### [09] 국민대학교 자율주행 경진대회
+- **Goal**: 국민대학교 자율주행 경진대회 실차 미션 수행 및 자율주행 소프트웨어 개발
+- **Situation & Task**: 실차 트랙 미션(차선 유지, 신호 감지, 장애물 우회) 수행을 위한 소프트웨어 개발.
+- **Action & Result**: ROS 2 센서 융합 노드, 차선/객체 인지 및 Pure Pursuit 경로 추종 제어를 연동하여 실차 트랙 주행 검증 성공.
 
 ---
 
-### 4. VR 기반 로봇 매니퓰레이터 3D 원격 제어 & Haptic Edge AI 시스템 (HW & VR Systems)
-> **Goal**: 3D spatial 센서와 하드웨어 액추에이터를 통합한 직관적 로봇 제어 및 인사이트 구축
-
-- **Action**: VR HMD/컨트롤러 6-DoF Pose 트래킹 데이터와 매니퓰레이터 역기구학(IK) Solvers 연동 실시간 원격 제어 구축. 초저전력 Vision Edge AI 모듈과 햅틱(Haptic) 피드백 하드웨어 액추에이터 통합 아키텍처 제안.
-
----
-
-## 🎓 Education & Activities
-
-- **숭실대학교 기계공학부** (주전공) & **컴퓨터학부** (복수전공)
-- **자율주행 & 로보틱스 학술 동아리 '제어학회'** (전 부회장 · Planning 파트 팀장 / 현 Localization 파트 팀장)
+© 2026 주진주 (Jinju Ju). Built with Clean HTML5, CSS3, & Modern JavaScript.
