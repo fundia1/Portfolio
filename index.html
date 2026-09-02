@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{이름 / 직무 포트폴리오}</title>
+  <meta name="description" content="{포트폴리오 설명 넣을 곳}">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="styles.css?v=1001">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>{PORTFOLIO LOGO}</span>
+        <span class="nav-logo-badge">SOONGSIL UNIV</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#demos"><i class="fa-solid fa-sliders"></i> Demos</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+        <li><a href="#tech"><i class="fa-solid fa-microchip"></i> Tech Stack</a></li>
+        <li><a href="#timeline"><i class="fa-solid fa-user-graduate"></i> Experience</a></li>
+      </ul>
+
+      <div class="nav-btn-group">
+        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Projects</a>
+        <a href="https://github.com" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i>
+          GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <i class="fa-solid fa-university"></i> {소속 / 전공 태그 넣을 곳}
+        </div>
+        <h1 class="hero-title">
+          {메인 타이틀 헤드라인 넣을 곳} <br>
+          <span class="text-gradient">{직무 / 강조 역량}</span>
+        </h1>
+        <p class="hero-subtitle">
+          {서브 타이틀 / 한 줄 소개 넣을 곳}
+        </p>
+        <p class="hero-description">
+          {상세 자기소개 및 핵심 강점 설명 넣을 곳. 예: 기계공학과 컴퓨터공학의 지식을 바탕으로 모바일 로봇 및 제어 소프트웨어를 개발합니다.}
+        </p>
+
+        <!-- Tech Badges -->
+        <div class="hero-badges">
+          <span class="badge"><i class="fa-solid fa-code"></i> C++</span>
+          <span class="badge"><i class="fa-solid fa-gear"></i> ROS 2</span>
+          <span class="badge"><i class="fa-solid fa-eye"></i> Perception</span>
+          <span class="badge"><i class="fa-solid fa-route"></i> Planning</span>
+          <span class="badge"><i class="fa-solid fa-satellite-dish"></i> Sensor Fusion</span>
+        </div>
+
+        <!-- Metric Counter Cards -->
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <div class="metric-val">{수치 1}</div>
+            <div class="metric-label">{지표 1 설명}</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">{수치 2}</div>
+            <div class="metric-label">{지표 2 설명}</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">{수치 3}</div>
+            <div class="metric-label">{지표 3 설명}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Widget -->
+      <div class="hero-visual">
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar">
+              <i class="fa-solid fa-user-gear"></i>
+            </div>
+            <div class="profile-info">
+              <h3>{이름}</h3>
+              <p>{희망 직무 / 분야}</p>
+            </div>
+          </div>
+
+          <div class="profile-details">
+            <div class="detail-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span><strong>숭실대학교</strong> {주전공 넣을 곳}</span>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span><strong>숭실대학교</strong> {복수전공 넣을 곳}</span>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-users-gears"></i>
+              <span>{학술 동아리 / 직책 넣을 곳}</span>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>{이메일 / 연락처 넣을 곳}</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;"
+              onclick="scrollToSection('demos')">
+              <i class="fa-solid fa-play"></i> {데모 보러가기}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demos Section -->
+  <section class="demos-section" id="demos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Demos</span>
+        <h2 class="section-title">{인터랙티브 데모 섹션 제목}</h2>
+        <p class="section-desc">{데모 섹션 설명 넣을 곳. 시뮬레이션 및 필터를 조작해 보세요.}</p>
+      </div>
+
+      <!-- Demo Tabs -->
+      <div class="demo-tabs">
+        <button class="demo-tab-btn active" onclick="switchDemo('demo-robot', this)">
+          <i class="fa-solid fa-car-side"></i> 데모 1: 차량 운동학 & 경로 추종 (Ackermann Kinematics)
+        </button>
+        <button class="demo-tab-btn" onclick="switchDemo('demo-ekf', this)">
+          <i class="fa-solid fa-robot"></i> 데모 2: 2자유도 로봇팔 & Pick-and-Place
+        </button>
+        <button class="demo-tab-btn" onclick="switchDemo('demo-bt', this)">
+          <i class="fa-solid fa-eye"></i> 데모 3: Perception & Planning Pipeline
+        </button>
+      </div>
+
+      <!-- Demo View Container -->
+      <div class="demo-view-container">
+
+        <!-- Panel 1: Driving Control & Kinematics Canvas -->
+        <div class="demo-panel active" id="demo-robot">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div>
+              <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-route text-gradient"></i> 데모 1: 아커만 조향 운동학 & Pure
+                Pursuit 경로 추종</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">캔버스를 클릭하여 목표 지점을 설정하면 아커만 운동학(Ackermann
+                Kinematics) 모델 기반으로 최적 조향각을 계산하여 추종합니다.</p>
+            </div>
+            <button class="ctrl-btn" onclick="resetRobotSim()"><i class="fa-solid fa-rotate-left"></i> 리셋</button>
+          </div>
+
+          <div class="canvas-wrapper">
+            <canvas id="robotCanvas"></canvas>
+            <div class="demo-click-overlay" id="robotClickOverlay"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 999; cursor: pointer;">
+              <div class="overlay-content">
+                <div class="click-icon-wrapper">
+                  <div class="click-pulse-ring"></div>
+                  <svg class="click-anim-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                    <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6"></path>
+                    <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                    <path
+                      d="M18 8a2 2 0 0 1 2 2v4a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.83l1.76 1.76V6a2 2 0 0 1 4 0v5">
+                    </path>
+                  </svg>
+                </div>
+                <div class="overlay-title">CLICK!</div>
+                <div class="overlay-sub">캔버스를 클릭하여 목표 지점을 설정하세요</div>
+              </div>
+            </div>
+            <div class="canvas-hud">
+              <div><strong>Target:</strong> <span id="hud-target">(0, 0)</span></div>
+              <div><strong>Pos:</strong> <span id="hud-pos">(0, 0)</span> | <strong>Yaw:</strong> <span
+                  id="hud-yaw">0°</span></div>
+              <div><strong>Cross-Track Error:</strong> <span id="hud-cte">0.00</span></div>
+              <div><strong>Steering Angle:</strong> <span id="hud-steer">0.00°</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: 2-DOF Robot Arm Manipulator Simulator (Inverse Kinematics) -->
+        <div class="demo-panel" id="demo-ekf">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div>
+              <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-robot text-gradient"></i> 데모 2: 2자유도 로봇팔 역기구학(IK) &
+                Pick-and-Place</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">키보드 방향키 [←/→: X축, ↑/↓: Y축] 또는 캔버스 클릭/드래그로
+                엔드이펙터(End-Effector)를 조종하면 역기구학(IK) 솔버가 관절각(θ₁, θ₂)을 실시간으로 계산하여 상자를 집어 옮깁니다.</p>
+            </div>
+            <button class="ctrl-btn" onclick="resetEKFSim()"><i class="fa-solid fa-rotate-left"></i> 리셋</button>
+          </div>
+
+          <div class="canvas-wrapper">
+            <canvas id="ekfCanvas"></canvas>
+            <div class="canvas-hud">
+              <div><strong>Joint 1 (θ₁):</strong> <span id="hud-arm-j1">0.0°</span> | <strong>Joint 2 (θ₂):</strong>
+                <span id="hud-arm-j2">0.0°</span></div>
+              <div><strong>End-Effector Pos:</strong> <span id="hud-arm-ee">(0, 0)</span></div>
+              <div><strong>Status:</strong> <span id="hud-arm-status" style="font-weight: 700;">🖐 GRIPPER OPEN</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manipulator Control Pad (IK Cartesian X/Y & Grab Control) -->
+          <div class="arm-ctrl-pad">
+            <div class="arm-ctrl-group">
+              <span class="ctrl-group-label"><i class="fa-solid fa-gamepad"></i> X축 이동:</span>
+              <button class="arm-btn" onmousedown="armState.keys.Left=true" onmouseup="armState.keys.Left=false"
+                ontouchstart="armState.keys.Left=true" ontouchend="armState.keys.Left=false"><i
+                  class="fa-solid fa-arrow-left"></i> [← / A]</button>
+              <button class="arm-btn" onmousedown="armState.keys.Right=true" onmouseup="armState.keys.Right=false"
+                ontouchstart="armState.keys.Right=true" ontouchend="armState.keys.Right=false">[→ / D] <i
+                  class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="arm-ctrl-group">
+              <span class="ctrl-group-label"><i class="fa-solid fa-gamepad"></i> Y축 이동:</span>
+              <button class="arm-btn" onmousedown="armState.keys.Up=true" onmouseup="armState.keys.Up=false"
+                ontouchstart="armState.keys.Up=true" ontouchend="armState.keys.Up=false"><i
+                  class="fa-solid fa-arrow-up"></i> [↑ / W]</button>
+              <button class="arm-btn" onmousedown="armState.keys.Down=true" onmouseup="armState.keys.Down=false"
+                ontouchstart="armState.keys.Down=true" ontouchend="armState.keys.Down=false">[↓ / S] <i
+                  class="fa-solid fa-arrow-down"></i></button>
+            </div>
+            <div class="arm-ctrl-group">
+              <button class="arm-btn grab-btn" onclick="toggleGrab()"><i class="fa-solid fa-hand"></i> ✊ 상자 집기 / 놓기
+                [Spacebar]</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Perception & Planning Pipeline -->
+        <div class="demo-panel" id="demo-bt">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div>
+              <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-route text-gradient"></i> 데모 3: Perception & Planning
+                Pipeline</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">LiDAR-Camera 융합 인지 및 Behavior Tree 기반 파이프라인
+                시뮬레이터입니다.</p>
+            </div>
+            <button class="ctrl-btn" onclick="triggerBTStep()"><i class="fa-solid fa-play"></i> Execute Step</button>
+          </div>
+
+          <div class="canvas-wrapper" style="margin-bottom: 1rem;">
+            <canvas id="btCanvas"></canvas>
+            <div class="canvas-hud">
+              <div><strong>Active Node:</strong> <span id="hud-bt-node">Sensor Fusion</span></div>
+              <div><strong>Obstacles Detected:</strong> <span id="hud-bt-obs">2 Objects</span></div>
+              <div><strong>Target Maneuver:</strong> <span id="hud-bt-action">Path Following</span></div>
+            </div>
+          </div>
+
+          <div class="bt-node-tree" id="btTreeContainer">
+            <!-- Dynamically Rendered by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Projects Matrix</span>
+        <h2 class="section-title">{주요 프로젝트 섹션 제목}</h2>
+        <p class="section-desc">{프로젝트 목록 설명 넣을 곳}</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+        <button class="filter-btn" onclick="filterProjects('cat1', this)">{카테고리 1}</button>
+        <button class="filter-btn" onclick="filterProjects('cat2', this)">{카테고리 2}</button>
+        <button class="filter-btn" onclick="filterProjects('cat3', this)">{카테고리 3}</button>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- Project Card 1 -->
+        <div class="project-card" data-category="cat1">
+          <div>
+            <span class="project-category">{카테고리 1 이름}</span>
+            <h3 class="project-title">{프로젝트 1 제목 넣을 곳}</h3>
+            <div class="project-goal">
+              <strong>Goal:</strong> {프로젝트 1 목표 / 요약 넣을 곳}
+            </div>
+            <div class="star-section">
+              <div class="star-item">
+                <strong>Situation (상황):</strong>
+                <p>{상황 설명 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Task (과제):</strong>
+                <p>{과제 설명 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Action (수행 내용):</strong>
+                <p>{수행 내용 및 해결 방법 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Result (성과):</strong>
+                <p>{성과 및 검증 수치 넣을 곳}</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="p-tag">{태그 1}</span>
+            <span class="p-tag">{태그 2}</span>
+            <span class="p-tag">{태그 3}</span>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card" data-category="cat2">
+          <div>
+            <span class="project-category">{카테고리 2 이름}</span>
+            <h3 class="project-title">{프로젝트 2 제목 넣을 곳}</h3>
+            <div class="project-goal">
+              <strong>Goal:</strong> {프로젝트 2 목표 / 요약 넣을 곳}
+            </div>
+            <div class="star-section">
+              <div class="star-item">
+                <strong>Situation (상황):</strong>
+                <p>{상황 설명 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Task (과제):</strong>
+                <p>{과제 설명 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Action (수행 내용):</strong>
+                <p>{수행 내용 및 해결 방법 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Result (성과):</strong>
+                <p>{성과 및 검증 수치 넣을 곳}</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="p-tag">{태그 1}</span>
+            <span class="p-tag">{태그 2}</span>
+            <span class="p-tag">{태그 3}</span>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card" data-category="cat3">
+          <div>
+            <span class="project-category">{카테고리 3 이름}</span>
+            <h3 class="project-title">{프로젝트 3 제목 넣을 곳}</h3>
+            <div class="project-goal">
+              <strong>Goal:</strong> {프로젝트 3 목표 / 요약 넣을 곳}
+            </div>
+            <div class="star-section">
+              <div class="star-item">
+                <strong>Situation (상황):</strong>
+                <p>{상황 설명 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Task (과제):</strong>
+                <p>{과제 설명 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Action (수행 내용):</strong>
+                <p>{수행 내용 및 해결 방법 넣을 곳}</p>
+              </div>
+              <div class="star-item">
+                <strong>Result (성과):</strong>
+                <p>{성과 및 검증 수치 넣을 곳}</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="p-tag">{태그 1}</span>
+            <span class="p-tag">{태그 2}</span>
+            <span class="p-tag">{태그 3}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Grid -->
+  <section class="tech-section" id="tech">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tech Stack</span>
+        <h2 class="section-title">{기술 스택 매트릭스 제목}</h2>
+        <p class="section-desc">{보유 기술 영역 설명 넣을 곳}</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <i class="fa-solid fa-gear"></i>
+            <h3>{분야 1}</h3>
+          </div>
+          <ul class="tech-list">
+            <li><span class="tech-name">{기술 1}</span> <span class="tech-level">숙련도</span></li>
+            <li><span class="tech-name">{기술 2}</span> <span class="tech-level">숙련도</span></li>
+            <li><span class="tech-name">{기술 3}</span> <span class="tech-level">숙련도</span></li>
+          </ul>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <i class="fa-solid fa-code"></i>
+            <h3>{분야 2}</h3>
+          </div>
+          <ul class="tech-list">
+            <li><span class="tech-name">{기술 1}</span> <span class="tech-level">숙련도</span></li>
+            <li><span class="tech-name">{기술 2}</span> <span class="tech-level">숙련도</span></li>
+            <li><span class="tech-name">{기술 3}</span> <span class="tech-level">숙련도</span></li>
+          </ul>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-card-header">
+            <i class="fa-solid fa-compass"></i>
+            <h3>{분야 3}</h3>
+          </div>
+          <ul class="tech-list">
+            <li><span class="tech-name">{기술 1}</span> <span class="tech-level">숙련도</span></li>
+            <li><span class="tech-name">{기술 2}</span> <span class="tech-level">숙련도</span></li>
+            <li><span class="tech-name">{기술 3}</span> <span class="tech-level">숙련도</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section" id="timeline">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Experience</span>
+        <h2 class="section-title">{학력 및 이력 섹션 제목}</h2>
+        <p class="section-desc">{학력 및 외부 활동 설명 넣을 곳}</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">{기간}</div>
+            <h3 class="timeline-title">{이력 1 제목}</h3>
+            <p class="timeline-sub"><strong>{소속 / 직책}</strong></p>
+            <ul>
+              <li>{세부 활동 내용 1}</li>
+              <li>{세부 활동 내용 2}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">{기간}</div>
+            <h3 class="timeline-title">{학력 / 학교 이름}</h3>
+            <p class="timeline-sub"><strong>{전공 / 세부 전공}</strong></p>
+            <ul>
+              <li>{주요 이수 과목 및 활동 1}</li>
+              <li>{주요 이수 과목 및 활동 2}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="nav-logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>{PORTFOLIO FOOTER}</span>
+      </div>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">
+        {푸터 소신 및 슬로건 문구 넣을 곳}
+      </p>
+      <div class="footer-copy">
+        &copy; 2026 {이름}. Built with Clean HTML5, CSS3, & Modern JavaScript.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modular JavaScript Files -->
+  <script src="js/navigation.js?v=1003"></script>
+  <script src="js/robot-sim.js?v=1003"></script>
+  <script src="js/arm-sim.js?v=1003"></script>
+  <script src="js/behavior-tree.js?v=1003"></script>
+  <script src="app.js?v=1003"></script>
+</body>
+
+</html>
