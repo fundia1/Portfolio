@@ -11,7 +11,7 @@ const PROJECTS_DATA = [
     title: "[01] VR Robot Teleoperation",
     goal: "VR 환경에서 가상 로봇과 실제 로봇을 원격 제어",
     tags: ["VR", "Unity", "Robotics", "C#", "Teleoperation"],
-    media: '<video controls autoplay loop muted src="images/caster_wheel.mp4"></video>',
+    media: '<div class="media-card-item"><video controls autoplay loop muted src="images/caster_wheel.mp4"></video><div class="media-caption"><i class="fa-solid fa-play"></i> VR 로봇 원격 제어 시뮬레이션 데모</div></div>',
     star: {
       situation: "VR 모션 트래킹 모듈과 가상/실제 물리 로봇 디바이스 간의 저지연 원격 동기화 제어 환경이 필요했습니다.",
       task: "Unity 기반 VR 인터페이스 설계 및 모션 데이터 IK(역운동학) 연동 모듈을 구축하여 원격 제어를 실현하는 것을 목표로 했습니다.",
@@ -26,7 +26,7 @@ const PROJECTS_DATA = [
     title: "[02] Unity Autonomous Driving Simulation",
     goal: "Unity 기반 자율주행 차량의 AI 학습 및 시뮬레이션",
     tags: ["Unity", "AI", "Simulation", "C#", "ML-Agents"],
-    media: '<img src="images/ml_agent.gif" alt="ML-Agents Autonomous Driving Demo">',
+    media: '<div class="media-card-item"><img src="images/ml_agent.gif" alt="ML-Agents Autonomous Driving Demo"><div class="media-caption"><i class="fa-solid fa-film"></i> ML-Agents 자율주행 강화학습 3D 서킷 데모</div></div>',
     star: {
       situation: "실제 차량 테스트 전 위험 요소가 배제된 가상 3D 환경에서 강화학습 주행 정책을 사전 검증하고자 했습니다.",
       task: "Ackermann 주행 운동학 모델과 ML-Agents 프레임워크를 융합하여 자율주행 학습 환경을 구축했습니다.",
@@ -41,7 +41,22 @@ const PROJECTS_DATA = [
     title: "[03] AI Smart Vending System",
     goal: "다중 카메라와 Grid Matching 기반 상품 위치 추정",
     tags: ["AI", "Computer Vision", "Python", "Multi-Camera", "Grid Matching"],
-    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/무인판매대.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/무인판매대_2.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/무인판매대_3.mp4" style="width:100%; border-radius: 8px;"></video></div>',
+    media: `
+      <div class="media-grid">
+        <div class="media-card-item">
+          <video controls autoplay loop muted src="images/무인판매대.mp4"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 무인판매대 실시간 비전 디텍션</div>
+        </div>
+        <div class="media-card-item">
+          <video controls loop muted src="images/무인판매대_2.mp4"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 다중 카메라 Grid 매칭 시연 #1</div>
+        </div>
+        <div class="media-card-item">
+          <video controls loop muted src="images/무인판매대_3.mp4"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 다중 카메라 Grid 매칭 시연 #2</div>
+        </div>
+      </div>
+    `,
     star: {
       situation: "스마트 자판기 내부에서 차폐되거나 중첩된 다양한 규격의 상품 객체를 정확하게 추정해야 했습니다.",
       task: "다중 시점 비전 스트림 매칭 및 Spatial Grid 좌표 매핑 파이프라인 알고리즘을 개발했습니다.",
@@ -56,7 +71,26 @@ const PROJECTS_DATA = [
     title: "[04] Autonomous Driving AI S/W",
     goal: "AI 기반 자율주행 시스템 개발 및 모빌리티 경진대회 참가",
     tags: ["ROS 2", "C++", "AI", "Perception", "Planning"],
-    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/semantic_detection.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/traffic_light.mp4" style="width:100%; border-radius: 8px;"></video><div style="display: flex; gap: 0.75rem; width: 100%;"><img src="images/mapping.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 주행 테스트"><img src="images/slam.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 인지 카메라 스트림"></div></div>',
+    media: `
+      <div class="media-grid">
+        <div class="media-card-item">
+          <video controls autoplay loop muted src="images/semantic_detection.mp4"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> Semantic Segmentation 인지 스트림</div>
+        </div>
+        <div class="media-card-item">
+          <video controls loop muted src="images/traffic_light.mp4"></video>
+          <div class="media-caption"><i class="fa-solid fa-video"></i> 신호등 인지 및 정지선 제어</div>
+        </div>
+        <div class="media-card-item">
+          <img src="images/mapping.png" alt="자율주행 주행 테스트">
+          <div class="media-caption"><i class="fa-solid fa-image"></i> 실차 주행 트랙 매핑</div>
+        </div>
+        <div class="media-card-item">
+          <img src="images/slam.png" alt="자율주행 인지 카메라 스트림">
+          <div class="media-caption"><i class="fa-solid fa-image"></i> SLAM 3D 지도 데이터 구축</div>
+        </div>
+      </div>
+    `,
     star: {
       situation: "대학생 자율주행 경진대회의 복잡한 트랙 미션(장애물 회피, 신호 감지)을 실시간으로 해결해야 했습니다.",
       task: "ROS 2 노드 기반 인지-판단-제어 소프트웨어 아키텍처 구축 및 모듈 간 통신 최적화를 진행했습니다.",
@@ -113,7 +147,7 @@ const PROJECTS_DATA = [
     title: "[08] RISE Capstone Design",
     goal: "단일 Mono Camera 기반 객체 추정 및 TTC 인지",
     tags: ["AI", "Computer Vision", "Mono Camera", "TTC", "Autonomous Driving"],
-    media: '<img src="images/pcd_with_rbg.jpg" alt="LiDAR RGB Point Cloud Fusion">',
+    media: '<div class="media-card-item"><img src="images/pcd_with_rbg.jpg" alt="LiDAR RGB Point Cloud Fusion"><div class="media-caption"><i class="fa-solid fa-cube"></i> LiDAR Point Cloud & RGB Color Fusion 시각화</div></div>',
     star: {
       situation: "RISE 사업단 캡스톤 디자인의 연구 주제로 차세대 임베디드 저전력 자율주행 안전 시스템을 개발하고자 했습니다.",
       task: "단일 모노 비전 센서 기반 실시간 충돌 위험 인지 및 차량 제어 연동 통합 파이프라인 개발을 추진했습니다.",
@@ -158,7 +192,10 @@ function renderProjectsSystem() {
     `;
 
     // 2. Optional Media Frame
-    const mediaHtml = proj.media ? `<div class="modal-media-frame">${proj.media}</div>` : '';
+    const mediaHtml = proj.media ? `
+      <hr class="modal-divider">
+      <div class="modal-media-frame">${proj.media}</div>
+    ` : '';
 
     // 3. STAR Detail Modals
     modalsHtml += `
@@ -168,11 +205,13 @@ function renderProjectsSystem() {
           <span class="project-category">${proj.categoryLabel}</span>
           <h2 style="font-size: 1.5rem; margin: 0.5rem 0 1rem; color: var(--text-dark);">${proj.title}</h2>
           
-          <div class="project-goal" style="background: rgba(0, 163, 224, 0.08); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
+          <div class="project-goal" style="background: rgba(0, 163, 224, 0.08); padding: 1rem; border-radius: var(--radius-md);">
             <strong>Goal:</strong> ${proj.goal}
           </div>
 
           ${mediaHtml}
+
+          <hr class="modal-divider">
 
           <div class="star-section">
             <div class="star-item" style="margin-bottom: 1.25rem;">
