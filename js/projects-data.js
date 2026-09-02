@@ -1,6 +1,6 @@
 /**
  * Portfolio Projects Data & Dynamic Renderer Module
- * Contains all 9 project definitions (Overview, Media & STAR Detail Breakdown)
+ * Contains all 8 project definitions (Overview, Media & STAR Detail Breakdown)
  */
 
 const PROJECTS_DATA = [
@@ -66,24 +66,9 @@ const PROJECTS_DATA = [
   },
   {
     id: "modal-project-5",
-    category: "autonomous",
-    categoryLabel: "Autonomous Driving",
-    title: "[05] LiDAR Obstacle Avoidance",
-    goal: "LiDAR 장애물 인식 및 회피 경로 생성",
-    tags: ["LiDAR", "Perception", "Planning", "C++"],
-    media: '<img src="images/pcd_with_rbg.jpg" alt="LiDAR RGB Point Cloud Fusion">',
-    star: {
-      situation: "3D LiDAR 데이터의 둔탁한 노면 포인트를 정밀하게 필터링하고 돌발 동적 장애물을 우회할 필요가 있었습니다.",
-      task: "PCL 지면 제거, Euclidean Clustering 및 가우시안 궤도 오프셋 회피 주행 경로 알고리즘을 개발했습니다.",
-      action: "C++ RANSAC 알고리즘 적용, k-d tree 기반 빠른 군집화 및 곡률 반응형 오프셋 궤도를 생성했습니다.",
-      result: "50FPS 이상의 고속 실시간 인지 처리 및 부드러운 우회 주행 검증을 완료했습니다."
-    }
-  },
-  {
-    id: "modal-project-6",
     category: "vision",
     categoryLabel: "AI & Computer Vision",
-    title: "[06] Monocular Camera TTC",
+    title: "[05] Monocular Camera TTC",
     goal: "단일 카메라 기반 객체 추정 및 TTC 인지",
     tags: ["Computer Vision", "Python", "Mono Camera", "TTC"],
     media: '<video controls autoplay loop muted src="images/media2.mp4"></video>',
@@ -95,10 +80,10 @@ const PROJECTS_DATA = [
     }
   },
   {
-    id: "modal-project-7",
+    id: "modal-project-6",
     category: "others",
     categoryLabel: "Web & Software",
-    title: "[07] Campus Meal Mate",
+    title: "[06] Campus Meal Mate",
     goal: "숭실대학교 학생 식사 매칭 웹 서비스",
     tags: ["Web", "JavaScript", "Database", "Team Project"],
     star: {
@@ -109,10 +94,10 @@ const PROJECTS_DATA = [
     }
   },
   {
-    id: "modal-project-8",
+    id: "modal-project-7",
     category: "others",
     categoryLabel: "Activities & Volunteer",
-    title: "[08] Robotex & MRC Global Olympiad",
+    title: "[07] Robotex & MRC Global Olympiad",
     goal: "2026 Robotex & MRC Global Olympiad Korea International 대회 보조심판",
     tags: ["Robotics", "Competition", "Volunteer"],
     star: {
@@ -123,10 +108,10 @@ const PROJECTS_DATA = [
     }
   },
   {
-    id: "modal-project-9",
+    id: "modal-project-8",
     category: "autonomous",
     categoryLabel: "Autonomous Driving",
-    title: "[09] RISE Capstone Design",
+    title: "[08] RISE Capstone Design",
     goal: "단일 Mono Camera 기반 객체 추정 및 TTC 인지",
     tags: ["AI", "Computer Vision", "Mono Camera", "TTC", "Autonomous Driving"],
     star: {
