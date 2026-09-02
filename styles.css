@@ -586,7 +586,9 @@ canvas {
   text-transform: uppercase;
   color: var(--sky-blue);
   margin-bottom: 0.4rem;
-  display: block;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
 }
 
 .project-title {
@@ -603,6 +605,59 @@ canvas {
   color: var(--ssu-blue);
   margin-bottom: 1rem;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* Category-specific Color Systems */
+/* 1. Simulation & VR (Cyan / Sky) */
+.project-card[data-category="simulation"] {
+  border-top: 4px solid #0284c7;
+}
+.project-card[data-category="simulation"] .project-category {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.1);
+}
+.project-card[data-category="simulation"] .project-goal {
+  background: rgba(2, 132, 199, 0.06);
+  border-left-color: #0284c7;
+}
+
+/* 2. Autonomous Driving (Indigo / Purple) */
+.project-card[data-category="autonomous"] {
+  border-top: 4px solid #6366f1;
+}
+.project-card[data-category="autonomous"] .project-category {
+  color: #4f46e5;
+  background: rgba(99, 102, 241, 0.1);
+}
+.project-card[data-category="autonomous"] .project-goal {
+  background: rgba(99, 102, 241, 0.06);
+  border-left-color: #6366f1;
+}
+
+/* 3. AI & Vision (Emerald Green) */
+.project-card[data-category="vision"] {
+  border-top: 4px solid #059669;
+}
+.project-card[data-category="vision"] .project-category {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+}
+.project-card[data-category="vision"] .project-goal {
+  background: rgba(5, 150, 105, 0.06);
+  border-left-color: #059669;
+}
+
+/* 4. Web & Activities (Amber / Orange) */
+.project-card[data-category="others"] {
+  border-top: 4px solid #d97706;
+}
+.project-card[data-category="others"] .project-category {
+  color: #d97706;
+  background: rgba(217, 119, 6, 0.1);
+}
+.project-card[data-category="others"] .project-goal {
+  background: rgba(217, 119, 6, 0.06);
+  border-left-color: #d97706;
 }
 
 .star-section {
