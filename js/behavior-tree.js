@@ -3,11 +3,12 @@
    ========================================================================== */
 
 let btSimState = {
-  // Track geometry
+  // Oval Track geometry
   cx: 400,
   cy: 200,
-  radius: 135,
-  trackWidth: 44,
+  radiusX: 280,
+  radiusY: 135,
+  trackWidth: 46,
   
   // Robot vehicle state
   robot: {
@@ -17,23 +18,21 @@ let btSimState = {
     targetSpeed: 2.8,
     x: 0,
     y: 0,
-    heading: 0,
-    detourOffset: 0,
-    targetDetourOffset: 0,
+    heading: Math.PI / 2,
     steering: 0
   },
   
-  // Traffic light at 12 o'clock position (top of track)
+  // Traffic light at 12 o'clock position (top center of oval track)
   trafficLight: {
-    angle: -Math.PI / 2, // 12 o'clock
+    angle: -Math.PI / 2,
     x: 400,
     y: 65,
-    state: 'GREEN' // 'GREEN' | 'RED'
+    state: 'GREEN'
   },
   
   // Draggable Obstacle (Default at 3 o'clock)
   obstacle: {
-    x: 535,
+    x: 680,
     y: 200,
     radius: 16,
     isDragging: false,
@@ -41,7 +40,7 @@ let btSimState = {
   },
   
   // Behavior Tree State
-  btState: 'CRUISING', // 'CRUISING' | 'AVOID_OBSTACLE' | 'SIGNAL_STOP' | 'EMERGENCY_STOP'
+  btState: 'CRUISING',
   running: false
 };
 
@@ -52,7 +51,7 @@ window.toggleTrafficLight = function() {
 };
 
 window.resetBTObstacle = function() {
-  btSimState.obstacle.x = btSimState.cx + btSimState.radius;
+  btSimState.obstacle.x = btSimState.cx + btSimState.radiusX;
   btSimState.obstacle.y = btSimState.cy;
   btSimState.obstacle.isDragging = false;
   updateBTHUD();
@@ -61,8 +60,8 @@ window.resetBTObstacle = function() {
 window.resetBTSim = function() {
   btSimState.robot.angle = Math.PI;
   btSimState.robot.speed = 0;
-  btSimState.robot.x = btSimState.cx + btSimState.radius * Math.cos(Math.PI);
-  btSimState.robot.y = btSimState.cy + btSimState.radius * Math.sin(Math.PI);
+  btSimState.robot.x = btSimState.cx + btSimState.radiusX * Math.cos(Math.PI);
+  btSimState.robot.y = btSimState.cy + btSimState.radiusY * Math.sin(Math.PI);
   btSimState.robot.heading = Math.PI / 2;
   btSimState.trafficLight.state = 'GREEN';
   window.resetBTObstacle();
@@ -99,11 +98,8 @@ function initBTCanvasSim() {
 
   canvas.onmousedown = (e) => {
     const pos = getCanvasCoords(e);
-    
-    // Check if clicked traffic light icon
     if (checkTrafficLightClick(pos)) return;
 
-    // Check if clicked obstacle
     const distToObs = Math.hypot(pos.x - btSimState.obstacle.x, pos.y - btSimState.obstacle.y);
     if (distToObs < btSimState.obstacle.radius + 10) {
       btSimState.obstacle.isDragging = true;
@@ -156,24 +152,25 @@ function initBTCanvasSim() {
       canvas.height = h;
 
       btSimState.cx = Math.round(w * 0.5);
-      btSimState.cy = Math.round(h * 0.5);
+      btSimState.cy = Math.round(h * 0.48);
 
-      // Adaptive track radius
-      btSimState.radius = Math.min(Math.round(w * 0.28), Math.round(h * 0.36));
-      btSimState.trackWidth = 44;
+      // Adaptive Oval track radii
+      btSimState.radiusX = Math.round(w * 0.35);
+      btSimState.radiusY = Math.round(h * 0.33);
+      btSimState.trackWidth = 46;
 
-      // Update Traffic Light position (Top 12 o'clock)
+      // Update Traffic Light position (Top 12 o'clock on oval)
       btSimState.trafficLight.x = btSimState.cx;
-      btSimState.trafficLight.y = btSimState.cy - btSimState.radius - 35;
+      btSimState.trafficLight.y = btSimState.cy - btSimState.radiusY - 35;
 
       if (btSimState.robot.x === 0 || btSimState.robot.y === 0) {
-        btSimState.robot.x = btSimState.cx + btSimState.radius * Math.cos(Math.PI);
-        btSimState.robot.y = btSimState.cy + btSimState.radius * Math.sin(Math.PI);
+        btSimState.robot.x = btSimState.cx + btSimState.radiusX * Math.cos(Math.PI);
+        btSimState.robot.y = btSimState.cy + btSimState.radiusY * Math.sin(Math.PI);
         btSimState.robot.heading = Math.PI / 2;
       }
 
       if (btSimState.obstacle.onTrack && !btSimState.obstacle.isDragging) {
-        btSimState.obstacle.x = btSimState.cx + btSimState.radius;
+        btSimState.obstacle.x = btSimState.cx + btSimState.radiusX;
         btSimState.obstacle.y = btSimState.cy;
       }
     } catch (err) {
@@ -186,37 +183,43 @@ function initBTCanvasSim() {
   function update() {
     try {
       const robot = btSimState.robot;
-      const R = btSimState.radius;
+      const Rx = btSimState.radiusX;
+      const Ry = btSimState.radiusY;
+      const Ravg = (Rx + Ry) / 2;
       const cx = btSimState.cx;
       const cy = btSimState.cy;
 
-      // 1. Calculate Current Robot Angle on Track
-      robot.angle = Math.atan2(robot.y - cy, robot.x - cx);
+      // 1. Calculate Current Robot Parametric Angle on Oval
+      robot.angle = Math.atan2((robot.y - cy) / Ry, (robot.x - cx) / Rx);
 
-      // 2. Obstacle Envelope Function: Target Path Radius R_target(theta)
+      // 2. Obstacle Envelope Function on Oval Track
       const obsX = btSimState.obstacle.x;
       const obsY = btSimState.obstacle.y;
-      const obsDistFromCenter = Math.hypot(obsX - cx, obsY - cy);
-      const obsAngle = Math.atan2(obsY - cy, obsX - cx);
-      const isObsOnTrack = Math.abs(obsDistFromCenter - R) < 42;
+      const obsAngle = Math.atan2((obsY - cy) / Ry, (obsX - cx) / Rx);
+      
+      // Expected track position of obstacle
+      const expectedObsX = cx + Rx * Math.cos(obsAngle);
+      const expectedObsY = cy + Ry * Math.sin(obsAngle);
+      const obsDistFromTrack = Math.hypot(obsX - expectedObsX, obsY - expectedObsY);
+      const isObsOnTrack = obsDistFromTrack < 42;
 
-      function getTargetRadiusAtAngle(theta) {
-        if (!isObsOnTrack) return R;
+      function getTargetOffsetAtAngle(theta) {
+        if (!isObsOnTrack) return 0;
         let dAngle = (theta - obsAngle) % (2 * Math.PI);
         if (dAngle > Math.PI) dAngle -= 2 * Math.PI;
         if (dAngle < -Math.PI) dAngle += 2 * Math.PI;
 
         const sigma = 0.35;
         if (Math.abs(dAngle) < 0.70) {
-          const peakAmp = (obsDistFromCenter <= R + 4) ? 36 : -36;
-          return R + peakAmp * Math.exp(- (dAngle * dAngle) / (2 * sigma * sigma));
+          const obsDistFromCenter = Math.hypot(obsX - cx, obsY - cy);
+          const trackDistFromCenter = Math.hypot(expectedObsX - cx, expectedObsY - cy);
+          const peakAmp = (obsDistFromCenter <= trackDistFromCenter + 4) ? 36 : -36;
+          return peakAmp * Math.exp(- (dAngle * dAngle) / (2 * sigma * sigma));
         }
-        return R;
+        return 0;
       }
 
-      // Current Target Radius & Detour Amplitude for HUD/BT logic
-      const curTargetR = getTargetRadiusAtAngle(robot.angle);
-      const curDetourOffset = curTargetR - R;
+      const curDetourOffset = getTargetOffsetAtAngle(robot.angle);
 
       // 3. Traffic Light Stop Line Check (12 o'clock, angle = -PI/2 - 0.22)
       const stopLineAngle = -Math.PI / 2 - 0.22;
@@ -224,17 +227,14 @@ function initBTCanvasSim() {
       if (angleDistToStop < 0) angleDistToStop += 2 * Math.PI;
       const isApproachingStopLine = (angleDistToStop < 0.45 && angleDistToStop > 0.02);
 
-      // 4. BEHAVIOR TREE DECISION ENGINE (State Machine Evaluation)
+      // 4. BEHAVIOR TREE DECISION ENGINE
       if (btSimState.trafficLight.state === 'RED' && isApproachingStopLine) {
-        // STATE 1: SIGNAL STOP
         btSimState.btState = 'SIGNAL_STOP';
         robot.targetSpeed = 0;
       } else if (Math.abs(curDetourOffset) > 4) {
-        // STATE 2: OBSTACLE AVOIDANCE (Smooth Detour Arc)
         btSimState.btState = 'AVOID_OBSTACLE';
         robot.targetSpeed = 2.0;
       } else {
-        // STATE 3: NORMAL CRUISING
         btSimState.btState = 'CRUISING';
         robot.targetSpeed = robot.maxSpeed;
       }
@@ -242,16 +242,15 @@ function initBTCanvasSim() {
       // Smooth Speed Acceleration / Deceleration
       robot.speed += 0.10 * (robot.targetSpeed - robot.speed);
 
-      // 5. PURE PURSUIT LOOKAHEAD & FORWARD KINEMATICS UPDATE (No Crab Sliding!)
+      // 5. PURE PURSUIT LOOKAHEAD & FORWARD KINEMATICS UPDATE ON OVAL TRACK
       if (robot.speed > 0.01) {
-        // Lookahead angle forward along clockwise loop
-        const lookaheadArcLength = 32; // px
-        const dThetaLookahead = lookaheadArcLength / R;
+        const lookaheadArcLength = 34; // px
+        const dThetaLookahead = lookaheadArcLength / Ravg;
         const targetTheta = robot.angle + dThetaLookahead;
 
-        const targetR = getTargetRadiusAtAngle(targetTheta);
-        const tx = cx + targetR * Math.cos(targetTheta);
-        const ty = cy + targetR * Math.sin(targetTheta);
+        const targetDetour = getTargetOffsetAtAngle(targetTheta);
+        const tx = cx + (Rx + targetDetour) * Math.cos(targetTheta);
+        const ty = cy + (Ry + targetDetour) * Math.sin(targetTheta);
 
         // Desired heading facing lookahead point
         const targetHeading = Math.atan2(ty - robot.y, tx - robot.x);
@@ -261,7 +260,7 @@ function initBTCanvasSim() {
         if (hErr > Math.PI) hErr -= 2 * Math.PI;
         if (hErr < -Math.PI) hErr += 2 * Math.PI;
 
-        // Smooth steering response facing forward
+        // Smooth steering response
         robot.heading += 0.18 * hErr;
         robot.steering = (hErr * (180 / Math.PI)).toFixed(1);
 
@@ -283,7 +282,8 @@ function initBTCanvasSim() {
 
       const cx = btSimState.cx;
       const cy = btSimState.cy;
-      const R = btSimState.radius;
+      const Rx = btSimState.radiusX;
+      const Ry = btSimState.radiusY;
       const tw = btSimState.trackWidth;
 
       // 1. Background Grid
@@ -297,27 +297,27 @@ function initBTCanvasSim() {
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
       }
 
-      // 2. Circular Asphalt Track
+      // 2. Oval Asphalt Track (Ellipse)
       // Outer track border
       ctx.fillStyle = '#334155';
       ctx.beginPath();
-      ctx.arc(cx, cy, R + tw / 2, 0, Math.PI * 2);
+      ctx.ellipse(cx, cy, Rx + tw / 2, Ry + tw / 2, 0, 0, Math.PI * 2);
       ctx.fill();
 
       // Inner grass cutout
       ctx.fillStyle = '#f8fafc';
       ctx.beginPath();
-      ctx.arc(cx, cy, R - tw / 2, 0, Math.PI * 2);
+      ctx.ellipse(cx, cy, Rx - tw / 2, Ry - tw / 2, 0, 0, Math.PI * 2);
       ctx.fill();
 
       // Inner & Outer Curb Edges
       ctx.strokeStyle = '#cbd5e1';
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(cx, cy, R + tw / 2, 0, Math.PI * 2);
+      ctx.ellipse(cx, cy, Rx + tw / 2, Ry + tw / 2, 0, 0, Math.PI * 2);
       ctx.stroke();
       ctx.beginPath();
-      ctx.arc(cx, cy, R - tw / 2, 0, Math.PI * 2);
+      ctx.ellipse(cx, cy, Rx - tw / 2, Ry - tw / 2, 0, 0, Math.PI * 2);
       ctx.stroke();
 
       // Dashed Center Lane Line
@@ -325,21 +325,23 @@ function initBTCanvasSim() {
       ctx.lineWidth = 2;
       ctx.setLineDash([10, 8]);
       ctx.beginPath();
-      ctx.arc(cx, cy, R, 0, Math.PI * 2);
+      ctx.ellipse(cx, cy, Rx, Ry, 0, 0, Math.PI * 2);
       ctx.stroke();
       ctx.setLineDash([]); // Reset dash
 
-      // 3. Traffic Light & Stop Line (12 o'clock)
+      // 3. Traffic Light & Stop Line (12 o'clock on Oval Track)
       const stopLineAngle = -Math.PI / 2 - 0.22;
-      const stopInnerR = R - tw / 2;
-      const stopOuterR = R + tw / 2;
+      const stopInnerX = cx + (Rx - tw / 2) * Math.cos(stopLineAngle);
+      const stopInnerY = cy + (Ry - tw / 2) * Math.sin(stopLineAngle);
+      const stopOuterX = cx + (Rx + tw / 2) * Math.cos(stopLineAngle);
+      const stopOuterY = cy + (Ry + tw / 2) * Math.sin(stopLineAngle);
 
-      // Draw White Stop Line across track
+      // Draw White Stop Line across oval track
       ctx.strokeStyle = '#ffffff';
       ctx.lineWidth = 5;
       ctx.beginPath();
-      ctx.moveTo(cx + stopInnerR * Math.cos(stopLineAngle), cy + stopInnerR * Math.sin(stopLineAngle));
-      ctx.lineTo(cx + stopOuterR * Math.cos(stopLineAngle), cy + stopOuterR * Math.sin(stopLineAngle));
+      ctx.moveTo(stopInnerX, stopInnerY);
+      ctx.lineTo(stopOuterX, stopOuterY);
       ctx.stroke();
 
       // Draw Traffic Light Post & Signal Bulb
@@ -350,7 +352,7 @@ function initBTCanvasSim() {
       ctx.strokeStyle = '#475569';
       ctx.lineWidth = 3;
       ctx.beginPath();
-      ctx.moveTo(tlX, cy - R - tw / 2);
+      ctx.moveTo(tlX, cy - Ry - tw / 2);
       ctx.lineTo(tlX, tlY + 12);
       ctx.stroke();
 
