@@ -1,6 +1,11 @@
 /**
  * Portfolio Projects Data & Dynamic Renderer Module
- * Contains all 9 project definitions (Overview & STAR Detail Breakdown)
+ * Contains all 9 project definitions (Overview, Media & STAR Detail Breakdown)
+ * 
+ * [Media Field usage]:
+ *  - Image / GIF: media: '<img src="path/to/image.jpg" alt="Demo Image">'
+ *  - Video: media: '<video controls src="path/to/video.mp4"></video>'
+ *  - YouTube Embed: media: '<iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>'
  */
 
 const PROJECTS_DATA = [
@@ -11,6 +16,7 @@ const PROJECTS_DATA = [
     title: "[01] VR Robot Teleoperation",
     goal: "VR 환경에서 가상 로봇과 실제 로봇을 원격 제어",
     tags: ["VR", "Unity", "Robotics", "C#", "Teleoperation"],
+    media: '<img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1000&q=80" alt="VR Robot Teleoperation Demo">',
     star: {
       situation: "VR 모션 트래킹 모듈과 가상/실제 물리 로봇 디바이스 간의 저지연 원격 동기화 제어 환경이 필요했습니다.",
       task: "Unity 기반 VR 인터페이스 설계 및 모션 데이터 IK(역운동학) 연동 모듈을 구축하여 원격 제어를 실현하는 것을 목표로 했습니다.",
@@ -25,6 +31,7 @@ const PROJECTS_DATA = [
     title: "[02] Unity Autonomous Driving Simulation",
     goal: "Unity 기반 자율주행 차량의 AI 학습 및 시뮬레이션",
     tags: ["Unity", "AI", "Simulation", "C#", "ML-Agents"],
+    media: '<img src="https://images.unsplash.com/photo-1558441719-23451ead6601?auto=format&fit=crop&w=1000&q=80" alt="Unity Autonomous Driving Simulation Demo">',
     star: {
       situation: "실제 차량 테스트 전 위험 요소가 배제된 가상 3D 환경에서 강화학습 주행 정책을 사전 검증하고자 했습니다.",
       task: "Ackermann 주행 운동학 모델과 ML-Agents 프레임워크를 융합하여 자율주행 학습 환경을 구축했습니다.",
@@ -39,6 +46,7 @@ const PROJECTS_DATA = [
     title: "[03] AI Smart Vending System",
     goal: "다중 카메라와 Grid Matching 기반 상품 위치 추정",
     tags: ["AI", "Computer Vision", "Python", "Multi-Camera", "Grid Matching"],
+    media: '<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80" alt="AI Vision Grid Detection Demo">',
     star: {
       situation: "스마트 자판기 내부에서 차폐되거나 중첩된 다양한 규격의 상품 객체를 정확하게 추정해야 했습니다.",
       task: "다중 시점 비전 스트림 매칭 및 Spatial Grid 좌표 매핑 파이프라인 알고리즘을 개발했습니다.",
@@ -166,7 +174,10 @@ function renderProjectsSystem() {
       </div>
     `;
 
-    // 2. STAR Detail Modals
+    // 2. Optional Media Frame
+    const mediaHtml = proj.media ? `<div class="modal-media-frame">${proj.media}</div>` : '';
+
+    // 3. STAR Detail Modals
     modalsHtml += `
       <div class="project-modal-backdrop" id="${proj.id}" onclick="if(event.target===this) closeProjectModal('${proj.id}')">
         <div class="project-modal-content">
@@ -174,9 +185,11 @@ function renderProjectsSystem() {
           <span class="project-category">${proj.categoryLabel}</span>
           <h2 style="font-size: 1.5rem; margin: 0.5rem 0 1rem; color: var(--text-dark);">${proj.title}</h2>
           
-          <div class="project-goal" style="background: rgba(0, 163, 224, 0.08); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <div class="project-goal" style="background: rgba(0, 163, 224, 0.08); padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.25rem;">
             <strong>Goal:</strong> ${proj.goal}
           </div>
+
+          ${mediaHtml}
 
           <div class="star-section">
             <div class="star-item" style="margin-bottom: 1.25rem;">
