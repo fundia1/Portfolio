@@ -151,7 +151,7 @@
           <i class="fa-solid fa-robot"></i> 데모 2: 2자유도 로봇팔 & Pick-and-Place
         </button>
         <button class="demo-tab-btn" onclick="switchDemo('demo-bt', this)">
-          <i class="fa-solid fa-eye"></i> 데모 3: Perception & Planning Pipeline
+          <i class="fa-solid fa-sitemap"></i> 데모 3: Behavior Tree 순찰 & 동적 우회/신호 제어
         </button>
       </div>
 
@@ -251,24 +251,26 @@
           </div>
         </div>
 
-        <!-- Panel 3: Perception & Planning Pipeline -->
+        <!-- Panel 3: Behavior Tree Autonomous Track Patrol Simulator -->
         <div class="demo-panel" id="demo-bt">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
             <div>
-              <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-route text-gradient"></i> 데모 3: Perception & Planning
-                Pipeline</h3>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">LiDAR-Camera 융합 인지 및 Behavior Tree 기반 파이프라인
-                시뮬레이터입니다.</p>
+              <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-sitemap text-gradient"></i> 데모 3: Behavior Tree 자율주행 순찰 & 동적 우회/신호 제어</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">원형 트랙을 순찰하는 로봇이 장애물 드래그 및 신호등 클릭에 맞춰 Behavior Tree(의사결정 트리) 노드 상태를 실시간으로 전환하며 동적으로 회피 및 정지 제어를 수행합니다.</p>
             </div>
-            <button class="ctrl-btn" onclick="triggerBTStep()"><i class="fa-solid fa-play"></i> Execute Step</button>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="ctrl-btn" onclick="toggleTrafficLight()"><i class="fa-solid fa-traffic-light"></i> 신호등 토글 [Red/Green]</button>
+              <button class="ctrl-btn" onclick="resetBTObstacle()"><i class="fa-solid fa-triangle-exclamation"></i> 장애물 리셋</button>
+              <button class="ctrl-btn" onclick="resetBTSim()"><i class="fa-solid fa-rotate-left"></i> 리셋</button>
+            </div>
           </div>
 
           <div class="canvas-wrapper" style="margin-bottom: 1rem;">
             <canvas id="btCanvas"></canvas>
             <div class="canvas-hud">
-              <div><strong>Active Node:</strong> <span id="hud-bt-node">Sensor Fusion</span></div>
-              <div><strong>Obstacles Detected:</strong> <span id="hud-bt-obs">2 Objects</span></div>
-              <div><strong>Target Maneuver:</strong> <span id="hud-bt-action">Path Following</span></div>
+              <div><strong>Active BT State:</strong> <span id="hud-bt-state" style="color: #10b981; font-weight: 700;">🟢 CRUISING</span></div>
+              <div><strong>Signal Light:</strong> <span id="hud-bt-signal" style="color: #10b981; font-weight: 700;">🟢 GREEN</span></div>
+              <div><strong>Vehicle Speed:</strong> <span id="hud-bt-speed">0.0 px/s</span> | <strong>Steering:</strong> <span id="hud-bt-steer">0.0°</span></div>
             </div>
           </div>
 
