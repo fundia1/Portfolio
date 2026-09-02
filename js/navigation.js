@@ -83,3 +83,29 @@ function filterProjects(category, btnElem) {
     }
   });
 }
+
+/* Project Modal Popup Controls */
+function openProjectModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeProjectModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.project-modal-backdrop.active').forEach(modal => {
+      modal.classList.remove('active');
+    });
+    document.body.style.overflow = 'auto';
+  }
+});
