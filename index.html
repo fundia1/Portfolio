@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자율주행 & 로보틱스 엔지니어 포트폴리오 | 숭실대학교</title>
+  <title> 포트폴리오 | 숭실대학교</title>
   <meta name="description" content="C++, Python, ROS, Perception, Localization, Planning 기반 자율주행 및 로보틱스 엔지니어 포트폴리오입니다.">
 
   <!-- Google Fonts & FontAwesome -->
@@ -26,7 +26,7 @@
     <div class="container nav-container">
       <a href="#hero" class="nav-logo">
         <i class="fa-solid fa-graduation-cap"></i>
-        <span>ROBOTICS PORTFOLIO</span>
+        <span> PORTFOLIO</span>
         <span class="nav-logo-badge">SOONGSIL UNIV</span>
       </a>
 
@@ -51,7 +51,7 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="hero-tag">
-          <i class="fa-solid fa-university"></i> {소속 / 전공 태그 넣을 곳}
+          <i class="fa-solid fa-university"></i> 숭실대학교 기계공학부 (주전공) · 컴퓨터학부 (복수전공)
         </div>
         <h1 class="hero-title">
           {메인 타이틀 헤드라인 넣을 곳} <br>
@@ -106,11 +106,11 @@
           <div class="profile-details">
             <div class="detail-item">
               <i class="fa-solid fa-graduation-cap"></i>
-              <span><strong>숭실대학교</strong> {주전공 넣을 곳}</span>
+              <span><strong>숭실대학교</strong> 기계공학부 (주전공)</span>
             </div>
             <div class="detail-item">
               <i class="fa-solid fa-laptop-code"></i>
-              <span><strong>숭실대학교</strong> {복수전공 넣을 곳}</span>
+              <span><strong>숭실대학교</strong> 컴퓨터학부 (복수전공)</span>
             </div>
             <div class="detail-item">
               <i class="fa-solid fa-users-gears"></i>
@@ -217,7 +217,8 @@
             <canvas id="ekfCanvas"></canvas>
             <div class="canvas-hud">
               <div><strong>Joint 1 (θ₁):</strong> <span id="hud-arm-j1">0.0°</span> | <strong>Joint 2 (θ₂):</strong>
-                <span id="hud-arm-j2">0.0°</span></div>
+                <span id="hud-arm-j2">0.0°</span>
+              </div>
               <div><strong>End-Effector Pos:</strong> <span id="hud-arm-ee">(0, 0)</span></div>
               <div><strong>Status:</strong> <span id="hud-arm-status" style="font-weight: 700;">🖐 GRIPPER OPEN</span>
               </div>
@@ -255,12 +256,16 @@
         <div class="demo-panel" id="demo-bt">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
             <div>
-              <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-sitemap text-gradient"></i> 데모 3: Behavior Tree 자율주행 순찰 & 동적 우회/신호 제어</h3>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">원형 트랙을 순찰하는 로봇이 장애물 드래그 및 신호등 클릭에 맞춰 Behavior Tree(의사결정 트리) 노드 상태를 실시간으로 전환하며 동적으로 회피 및 정지 제어를 수행합니다.</p>
+              <h3 style="font-size: 1.1rem;"><i class="fa-solid fa-sitemap text-gradient"></i> 데모 3: Behavior Tree 자율주행
+                순찰 & 동적 우회/신호 제어</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">원형 트랙을 순찰하는 로봇이 장애물 드래그 및 신호등 클릭에 맞춰 Behavior
+                Tree(의사결정 트리) 노드 상태를 실시간으로 전환하며 동적으로 회피 및 정지 제어를 수행합니다.</p>
             </div>
             <div style="display: flex; gap: 0.5rem;">
-              <button class="ctrl-btn" onclick="toggleTrafficLight()"><i class="fa-solid fa-traffic-light"></i> 신호등 토글 [Red/Green]</button>
-              <button class="ctrl-btn" onclick="resetBTObstacle()"><i class="fa-solid fa-triangle-exclamation"></i> 장애물 리셋</button>
+              <button class="ctrl-btn" onclick="toggleTrafficLight()"><i class="fa-solid fa-traffic-light"></i> 신호등 토글
+                [Red/Green]</button>
+              <button class="ctrl-btn" onclick="resetBTObstacle()"><i class="fa-solid fa-triangle-exclamation"></i> 장애물
+                리셋</button>
               <button class="ctrl-btn" onclick="resetBTSim()"><i class="fa-solid fa-rotate-left"></i> 리셋</button>
             </div>
           </div>
@@ -268,9 +273,12 @@
           <div class="canvas-wrapper" style="margin-bottom: 1rem;">
             <canvas id="btCanvas"></canvas>
             <div class="canvas-hud">
-              <div><strong>Active BT State:</strong> <span id="hud-bt-state" style="color: #10b981; font-weight: 700;">🟢 CRUISING</span></div>
-              <div><strong>Signal Light:</strong> <span id="hud-bt-signal" style="color: #10b981; font-weight: 700;">🟢 GREEN</span></div>
-              <div><strong>Vehicle Speed:</strong> <span id="hud-bt-speed">0.0 px/s</span> | <strong>Steering:</strong> <span id="hud-bt-steer">0.0°</span></div>
+              <div><strong>Active BT State:</strong> <span id="hud-bt-state"
+                  style="color: #10b981; font-weight: 700;">🟢 CRUISING</span></div>
+              <div><strong>Signal Light:</strong> <span id="hud-bt-signal" style="color: #10b981; font-weight: 700;">🟢
+                  GREEN</span></div>
+              <div><strong>Vehicle Speed:</strong> <span id="hud-bt-speed">0.0 px/s</span> | <strong>Steering:</strong>
+                <span id="hud-bt-steer">0.0°</span></div>
             </div>
           </div>
 
@@ -425,10 +433,18 @@
             <h3>Languages & Engine</h3>
           </div>
           <ul class="tech-list">
-            <li><span class="tech-name">C / C++</span> <span class="tech-level" style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Core</span></li>
-            <li><span class="tech-name">Python</span> <span class="tech-level" style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Core</span></li>
-            <li><span class="tech-name">C#</span> <span class="tech-level" style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Proficient</span></li>
-            <li><span class="tech-name">Unity</span> <span class="tech-level" style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Simulation</span></li>
+            <li><span class="tech-name">C / C++</span> <span class="tech-level"
+                style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Core</span>
+            </li>
+            <li><span class="tech-name">Python</span> <span class="tech-level"
+                style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Core</span>
+            </li>
+            <li><span class="tech-name">C#</span> <span class="tech-level"
+                style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Proficient</span>
+            </li>
+            <li><span class="tech-name">Unity</span> <span class="tech-level"
+                style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 2px 8px; border-radius: 4px; font-weight: 600;">Simulation</span>
+            </li>
           </ul>
         </div>
 
@@ -438,7 +454,9 @@
             <h3>Middleware</h3>
           </div>
           <ul class="tech-list">
-            <li><span class="tech-name">ROS</span> <span class="tech-level" style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Middleware</span></li>
+            <li><span class="tech-name">ROS</span> <span class="tech-level"
+                style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Middleware</span>
+            </li>
           </ul>
         </div>
 
@@ -448,9 +466,15 @@
             <h3>Core Engineering Domains</h3>
           </div>
           <ul class="tech-list">
-            <li><span class="tech-name">Perception</span> <span class="tech-level" style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Domain Focus</span></li>
-            <li><span class="tech-name">Localization</span> <span class="tech-level" style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Domain Focus</span></li>
-            <li><span class="tech-name">Planning</span> <span class="tech-level" style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Domain Focus</span></li>
+            <li><span class="tech-name">Perception</span> <span class="tech-level"
+                style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Domain
+                Focus</span></li>
+            <li><span class="tech-name">Localization</span> <span class="tech-level"
+                style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Domain
+                Focus</span></li>
+            <li><span class="tech-name">Planning</span> <span class="tech-level"
+                style="background: rgba(0, 163, 224, 0.15); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">Domain
+                Focus</span></li>
           </ul>
         </div>
       </div>
