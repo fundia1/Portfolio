@@ -26,7 +26,7 @@ const PROJECTS_DATA = [
     title: "[02] Unity Autonomous Driving Simulation",
     goal: "Unity 기반 자율주행 차량의 AI 학습 및 시뮬레이션",
     tags: ["Unity", "AI", "Simulation", "C#", "ML-Agents"],
-    media: '<img src="images/image7.gif" alt="ML-Agents Autonomous Driving Demo">',
+    media: '<img src="images/ml_agent.gif" alt="ML-Agents Autonomous Driving Demo">',
     star: {
       situation: "실제 차량 테스트 전 위험 요소가 배제된 가상 3D 환경에서 강화학습 주행 정책을 사전 검증하고자 했습니다.",
       task: "Ackermann 주행 운동학 모델과 ML-Agents 프레임워크를 융합하여 자율주행 학습 환경을 구축했습니다.",
@@ -41,7 +41,7 @@ const PROJECTS_DATA = [
     title: "[03] AI Smart Vending System",
     goal: "다중 카메라와 Grid Matching 기반 상품 위치 추정",
     tags: ["AI", "Computer Vision", "Python", "Multi-Camera", "Grid Matching"],
-    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/제목 없는 디자인 (1).mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/제목 없는 디자인.mp4" style="width:100%; border-radius: 8px;"></video></div>',
+    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/무인판매대.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/무인판매대_2.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/무인판매대_3.mp4" style="width:100%; border-radius: 8px;"></video></div>',
     star: {
       situation: "스마트 자판기 내부에서 차폐되거나 중첩된 다양한 규격의 상품 객체를 정확하게 추정해야 했습니다.",
       task: "다중 시점 비전 스트림 매칭 및 Spatial Grid 좌표 매핑 파이프라인 알고리즘을 개발했습니다.",
@@ -56,7 +56,7 @@ const PROJECTS_DATA = [
     title: "[04] Autonomous Driving AI S/W",
     goal: "AI 기반 자율주행 시스템 개발 및 모빌리티 경진대회 참가",
     tags: ["ROS 2", "C++", "AI", "Perception", "Planning"],
-    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/screencast_00010.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/screencast_00013.mp4" style="width:100%; border-radius: 8px;"></video><div style="display: flex; gap: 0.75rem; width: 100%;"><img src="images/screenshot_00018.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 주행 테스트"><img src="images/screenshot_00020.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 인지 카메라 스트림"></div></div>',
+    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/semantic_detection.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/traffic_light.mp4" style="width:100%; border-radius: 8px;"></video><div style="display: flex; gap: 0.75rem; width: 100%;"><img src="images/mapping.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 주행 테스트"><img src="images/slam.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 인지 카메라 스트림"></div></div>',
     star: {
       situation: "대학생 자율주행 경진대회의 복잡한 트랙 미션(장애물 회피, 신호 감지)을 실시간으로 해결해야 했습니다.",
       task: "ROS 2 노드 기반 인지-판단-제어 소프트웨어 아키텍처 구축 및 모듈 간 통신 최적화를 진행했습니다.",
@@ -71,7 +71,6 @@ const PROJECTS_DATA = [
     title: "[05] Monocular Camera TTC",
     goal: "단일 카메라 기반 객체 추정 및 TTC 인지",
     tags: ["Computer Vision", "Python", "Mono Camera", "TTC"],
-    media: '<video controls autoplay loop muted src="images/media2.mp4"></video>',
     star: {
       situation: "고가의 3D 센서 없이 단일 모노 카메라 스트림만으로 전방 충돌 예상 시간(TTC)을 정밀 계산해야 했습니다.",
       task: "2D 비전 디텍션 바운딩 박스의 프레임 간 스케일 변화율 추정 기반 비상 제어 예측 알고리즘 구축을 목표로 했습니다.",
@@ -114,6 +113,7 @@ const PROJECTS_DATA = [
     title: "[08] RISE Capstone Design",
     goal: "단일 Mono Camera 기반 객체 추정 및 TTC 인지",
     tags: ["AI", "Computer Vision", "Mono Camera", "TTC", "Autonomous Driving"],
+    media: '<img src="images/pcd_with_rbg.jpg" alt="LiDAR RGB Point Cloud Fusion">',
     star: {
       situation: "RISE 사업단 캡스톤 디자인의 연구 주제로 차세대 임베디드 저전력 자율주행 안전 시스템을 개발하고자 했습니다.",
       task: "단일 모노 비전 센서 기반 실시간 충돌 위험 인지 및 차량 제어 연동 통합 파이프라인 개발을 추진했습니다.",
