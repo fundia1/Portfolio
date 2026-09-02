@@ -56,7 +56,7 @@ const PROJECTS_DATA = [
     title: "[04] Autonomous Driving AI S/W",
     goal: "AI 기반 자율주행 시스템 개발 및 모빌리티 경진대회 참가",
     tags: ["ROS 2", "C++", "AI", "Perception", "Planning"],
-    media: '<div style="display: flex; gap: 0.75rem; width: 100%;"><img src="images/screenshot_00018.png" style="width: 50%; border-radius: 8px; object-fit: cover;" alt="자율주행 주행 테스트"><img src="images/screenshot_00020.png" style="width: 50%; border-radius: 8px; object-fit: cover;" alt="자율주행 인지 카메라 스트림"></div>',
+    media: '<div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;"><video controls autoplay loop muted src="images/screencast_00010.mp4" style="width:100%; border-radius: 8px;"></video><video controls loop muted src="images/screencast_00013.mp4" style="width:100%; border-radius: 8px;"></video><div style="display: flex; gap: 0.75rem; width: 100%;"><img src="images/screenshot_00018.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 주행 테스트"><img src="images/screenshot_00020.png" style="width: 50%; border-radius: 8px; object-fit: contain;" alt="자율주행 인지 카메라 스트림"></div></div>',
     star: {
       situation: "대학생 자율주행 경진대회의 복잡한 트랙 미션(장애물 회피, 신호 감지)을 실시간으로 해결해야 했습니다.",
       task: "ROS 2 노드 기반 인지-판단-제어 소프트웨어 아키텍처 구축 및 모듈 간 통신 최적화를 진행했습니다.",
